@@ -29,6 +29,8 @@ class HomeActivity : AppCompatActivity() {
 
 //      OpenHomeFragment with onStart
         openHome()
+        
+        print("hello")
 
 //      calling Toolbar function
         setUpToolbar()
