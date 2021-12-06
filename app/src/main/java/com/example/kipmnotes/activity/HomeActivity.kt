@@ -25,13 +25,13 @@ class HomeActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
-
 //      OpenHomeFragment with onStart
         openHome()
 
 //      calling Toolbar function
         setUpToolbar()
 
+        println("Test")
 
 //       make hamburger icon working
         val actionBarDrawerToggle = ActionBarDrawerToggle(this,binding.drawerLayout,
