@@ -66,7 +66,7 @@
         android:textSize="15sp"
         android:layout_marginTop="10dp"
         android:inputType="text"
-        android:maxLength="25"
+        android:maxLength="254"
         android:layout_below="@id/etRegisterName"
         android:layout_centerHorizontal="true"
         android:drawableStart="@drawable/ic_college"
