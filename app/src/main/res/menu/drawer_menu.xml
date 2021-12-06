@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/home"
+        android:title="@string/home"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/study"
+        android:title="@string/study"
+        android:icon="@drawable/ic_study"/>
+    <item
+        android:id="@+id/placments"
+        android:title="@string/placements"
+        android:icon="@drawable/ic_placement"/>
+    <item
+        android:id="@+id/roadmaps"
+        android:title="@string/roadmaps"
+        android:icon="@drawable/ic_roadmap"/>
+
+    <item
+        android:id="@+id/language"
+        android:title="@string/programming_language"
+        android:icon="@drawable/ic_language"/>
+    <item
+        android:id="@+id/skills"
+        android:title="@string/skills"
+        android:icon="@drawable/ic_skill"/>
+
+    <item
+        android:id="@+id/interview"
+        android:title="@string/interview_questions"
+        android:icon="@drawable/ic_interview"/>
+
+    <item
+        android:id="@+id/about"
+        android:title="@string/about_us"
+        android:icon="@drawable/ic_about">
+    </item>
+
+    <item
+        android:id="@+id/logOut"
+        android:title="@string/log_out"
+        android:icon="@drawable/ic_logout"/>
+    </group>
+</menu>

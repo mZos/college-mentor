@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dull_white"
+    tools:context=".activity.RegisterActivity">
+
+
+    <ImageView
+        android:id="@+id/imgLogin"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/loginlogo"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/txtMSG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_an_account"
+        android:layout_below="@+id/imgLogin"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/txtMSG1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up_to_get_started"
+        android:layout_below="@+id/txtMSG"
+        android:textColor="#616161"
+        android:textStyle="normal"
+        android:layout_marginStart="22dp"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:id="@+id/etRegisterName"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="28dp"
+        android:hint="@string/name"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:inputType="text"
+        android:maxLength="25"
+        android:layout_below="@id/txtMSG1"
+        android:layout_centerHorizontal="true"
+        android:drawableStart="@drawable/ic_person"
+        android:drawablePadding="5dp"
+        android:textColorHint="@color/common_google_signin_btn_text_light_default"
+        android:background="@color/grey"/>
+
+    <EditText
+        android:id="@+id/etRegisterCollege"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="28dp"
+        android:hint="@string/institution_name"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:maxLength="25"
+        android:layout_below="@id/etRegisterName"
+        android:layout_centerHorizontal="true"
+        android:drawableStart="@drawable/ic_college"
+        android:drawablePadding="5dp"
+        android:textColorHint="@color/common_google_signin_btn_text_light_default"
+        android:background="@color/grey"/>
+
+    <EditText
+        android:id="@+id/etRegisterCourse"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="28dp"
+        android:hint="@string/bachler_of_engineering_course"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:maxLength="25"
+        android:layout_below="@id/etRegisterCollege"
+        android:layout_centerHorizontal="true"
+        android:drawableStart="@drawable/ic_course"
+        android:drawablePadding="5dp"
+        android:textColorHint="@color/common_google_signin_btn_text_light_default"
+        android:background="@color/grey"/>
+
+    <EditText
+        android:id="@+id/etRegisterEmail"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="28dp"
+        android:hint="@string/email_address"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:inputType="textEmailAddress"
+        android:maxLength="25"
+        android:layout_below="@id/etRegisterCourse"
+        android:layout_centerHorizontal="true"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="5dp"
+        android:textColorHint="@color/common_google_signin_btn_text_light_default"
+        android:background="@color/grey"/>
+
+    <EditText
+        android:id="@+id/etRegisterPass"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="28dp"
+        android:hint="@string/password"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:maxLength="25"
+        android:layout_below="@id/etRegisterEmail"
+        android:layout_centerHorizontal="true"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="7dp"
+        android:textColorHint="@color/common_google_signin_btn_text_light_default"
+        android:background="@color/grey"/>
+
+    <EditText
+        android:id="@+id/etRegisterConfirmPass"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="28dp"
+        android:hint="@string/confirm_password"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:maxLength="25"
+        android:layout_below="@id/etRegisterPass"
+        android:layout_centerHorizontal="true"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="7dp"
+        android:textColorHint="@color/common_google_signin_btn_text_light_default"
+        android:background="@color/grey"/>
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_below="@id/etRegisterConfirmPass"
+        android:text="@string/register"
+        android:textColor="@color/black"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="28dp"
+        android:background="@color/green"
+        android:layout_marginStart="28dp"/>
+
+
+    <TextView
+        android:id="@+id/txtAgainLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="I'm already a member ! Sign-In"
+        android:textColor="@color/black"
+        android:layout_marginBottom="20dp"/>
+
+</RelativeLayout>

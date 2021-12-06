@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "876325107894",
+    "project_id": "kipm-study-and-placements-app",
+    "storage_bucket": "kipm-study-and-placements-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876325107894:android:cdd96ee95f3a11a28d4e17",
+        "android_client_info": {
+          "package_name": "com.example.kipmnotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876325107894-1as5g11ba4c4ikf9jtgdj3c775i4gb2r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEFzPdIU4KP3l2lEjefEjdHdeE5Dztd4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876325107894-1as5g11ba4c4ikf9jtgdj3c775i4gb2r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

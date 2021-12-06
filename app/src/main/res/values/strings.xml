@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Kipm Notes</string>
+    <string name="home">Home</string>
+    <string name="study">Study</string>
+    <string name="placements">Placements</string>
+    <string name="skills">Extra Skills</string>
+    <string name="about_us">About Us</string>
+    <string name="vscode_useful_tricks">VSCODE Useful Tricks</string>
+    <string name="photoshop_designing">Photoshop Designing</string>
+    <string name="learn_github">Learn GitHub</string>
+    <string name="programming_language">Programming Language</string>
+    <string name="learn_python">Learn Python</string>
+    <string name="learn_java">learn Java</string>
+    <string name="learn_javascript">Learn Javascript</string>
+    <string name="learn_cpp">Learn CPP</string>
+    <string name="software_development">Software Development</string>
+    <string name="website_development">Website Development</string>
+    <string name="machine_learning">Machine Learning</string>
+    <string name="android_development">Android Development</string>
+    <string name="finalYear">FinalYear</string>
+    <string name="thirdYear">ThirdYear</string>
+    <string name="secondYear">SecondYear</string>
+    <string name="firstYear">FirstYear</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+    <string name="study_and_placement_app">Study and Placement App</string>
+    <string name="kipm">KIPM</string>
+    <string name="web_client_id">876325107894-1as5g11ba4c4ikf9jtgdj3c775i4gb2r.apps.googleusercontent.com</string>
+    <string name="log_out">Log Out</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="sign_in_using_linkedin">Sign-in using LinkedIn</string>
+    <string name="don_t_have_an_account_sign_up_now">Don\'t have an account? Sign up Now!</string>
+    <string name="sign_in_using_github">Sign-in using Github</string>
+    <string name="sign_in_using_facebook">Sign-in using Facebook</string>
+    <string name="sign_in_using_google">Sign-in using Google</string>
+    <string name="register">Register</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="_1st_year_of_education">1st(year of education)</string>
+    <string name="computer_science_branch">Computer Science(Branch)</string>
+    <string name="bachler_of_engineering_course">Bachler of Engineering(Course)</string>
+    <string name="institution_name">Institution Name</string>
+    <string name="name">Name</string>
+    <string name="sign_up_to_get_started">Sign-up to get started</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="interview_questions">Interview Questions</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="page_in_progress">Page in Progress...</string>
+    <string name="roadmaps">Roadmaps</string>
+    <string name="demo_string">Demo String</string>
+    <string name="made_with_love_in_india">Made with love in India</string>
+    <string name="developers">Developers:</string>
+    <string name="android_developer">Android Developer</string>
+    <string name="masoom_zaid">Masoom Zaid</string>
+    <string name="masoomLinkedin"><a href="https://www.linkedin.com/in/masoom-zaid-3546b81b3/">Know more</a></string>
+    <string name="zakariyaLinkedin"><a href="https://www.linkedin.com/in/mohammadzakariya/">Know more</a></string>
+    <string name="vishalLinkedin"><a href="https://www.linkedin.com/in/vishal-kumar-a3b050222/">Know more</a></string>
+    <string name="vishal_kumar">Vishal Kumar</string>
+    <string name="mohammad_zakariya">Mohammad Zakariya</string>
+
+
+
+</resources>
