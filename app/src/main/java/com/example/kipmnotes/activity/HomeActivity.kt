@@ -25,12 +25,12 @@ class HomeActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
-        print("this is a test branch")
-
 //      OpenHomeFragment with onStart
         openHome()
         
         print("Beta")
+
+        print("this is a test message from mZos")
 
 //      calling Toolbar function
         setUpToolbar()
