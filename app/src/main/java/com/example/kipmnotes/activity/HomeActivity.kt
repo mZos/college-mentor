@@ -37,7 +37,6 @@ class HomeActivity : AppCompatActivity() {
 //      calling Toolbar function
         setUpToolbar()
 
-
 //       make hamburger icon working
         val actionBarDrawerToggle = ActionBarDrawerToggle(this,binding.drawerLayout,
             R.string.open_drawer,
@@ -45,7 +44,6 @@ class HomeActivity : AppCompatActivity() {
         )
         binding.drawerLayout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
-
 
 //        Adding navigation clicks actions
         binding.navigationView.setNavigationItemSelectedListener {
@@ -64,7 +62,6 @@ class HomeActivity : AppCompatActivity() {
                     openHome()
                     binding.drawerLayout.closeDrawers()
                 }
-
 
 //                Adding clicks on Study Menu
                 R.id.study -> {
@@ -93,7 +90,6 @@ class HomeActivity : AppCompatActivity() {
                     binding.drawerLayout.closeDrawers()
                 }
 
-
 //                Programming language Clicks
                 R.id.language ->{
                     supportFragmentManager.beginTransaction()
@@ -102,7 +98,6 @@ class HomeActivity : AppCompatActivity() {
                     supportActionBar?.title = "Pragramming Languages"
                     binding.drawerLayout.closeDrawers()
                 }
-
 
 //                Adding clicks on ExtraSkills
                 R.id.skills ->{
@@ -119,7 +114,6 @@ class HomeActivity : AppCompatActivity() {
                     binding.drawerLayout.closeDrawers()
                 }
 
-
 //              Adding clicks on About Menu
                 R.id.about -> {
                     supportFragmentManager.beginTransaction()
@@ -128,7 +122,6 @@ class HomeActivity : AppCompatActivity() {
                     supportActionBar?.title = "About Us"
                     binding.drawerLayout.closeDrawers()
                 }
-
 
 //              Adding Clicks on LogOut
                 R.id.logOut ->{
@@ -152,8 +145,6 @@ class HomeActivity : AppCompatActivity() {
         binding.navigationView.setCheckedItem(R.id.home)
     }
 
-
-
 //  Creating an function for setting up toolbar with hamburger icon
     private fun setUpToolbar(){
         setSupportActionBar(binding.toolbar)
@@ -170,7 +161,6 @@ class HomeActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
 
 //    Added backPressFunctionality
     override fun onBackPressed() {

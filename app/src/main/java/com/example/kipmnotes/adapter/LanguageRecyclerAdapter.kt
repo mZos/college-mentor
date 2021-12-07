@@ -29,7 +29,7 @@ class LanguageRecyclerAdapter(val context: Context,val itemList: ArrayList<Strin
         val text = itemList[position]
         holder.txtName.text = text
         holder.layout.setOnClickListener{
-            Toast.makeText(context,"Hello Friends",Toast.LENGTH_SHORT).show()
+
         }
 
     }
