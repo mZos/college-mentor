@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
 //      OpenHomeFragment with onStart
         openHome()
         
-        print("hello")
+        print("Beta")
 
 //      calling Toolbar function
         setUpToolbar()
