@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/K4CE1/AndroidStudioProjects/college-mentor/app/src/main/res/layout/activity_register.xml" value="0.11639492753623189" />
         <entry key="..\:/Users/Shadab/AndroidStudioProjects/KipmNotes/app/src/main/res/drawable/cursor.xml" value="0.22205128205128205" />
         <entry key="..\:/Users/Shadab/AndroidStudioProjects/KipmNotes/app/src/main/res/drawable/customborder.xml" value="0.22205128205128205" />
         <entry key="..\:/Users/Shadab/AndroidStudioProjects/KipmNotes/app/src/main/res/layout-v28/fragment_about.xml" value="0.18" />
@@ -13,12 +12,11 @@
         <entry key="..\:/Users/Shadab/AndroidStudioProjects/KipmNotes/app/src/main/res/layout/fragment_roadmap.xml" value="0.10182370820668693" />
         <entry key="..\:/Users/Shadab/AndroidStudioProjects/KipmNotes/app/src/main/res/layout/recycler_about_single_row.xml" value="0.10182370820668693" />
         <entry key="..\:/Users/Shadab/AndroidStudioProjects/KipmNotes/app/src/main/res/layout/recycler_language_single_row.xml" value="0.10182370820668693" />
-        <entry key="..\:/Users/Shadab/AndroidStudioProjects/college-mentor/app/src/main/res/layout-v28/fragment_about.xml" value="0.22" />
-        <entry key="..\:/Users/Shadab/AndroidStudioProjects/college-mentor/app/src/main/res/layout/fragment_about.xml" value="0.18" />
+        <entry key="..\:/Users/Zakariya/Desktop/New folder (2)/KIPM---study-and-placment-app/app/src/main/res/layout/fragment_about.xml" value="0.13020833333333334" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
