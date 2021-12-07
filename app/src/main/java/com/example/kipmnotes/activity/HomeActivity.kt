@@ -28,7 +28,7 @@ class HomeActivity : AppCompatActivity() {
 //      OpenHomeFragment with onStart
         openHome()
         
-        print("hello")
+        print("Beta")
 
         print("this is a test message from mZos")
 
