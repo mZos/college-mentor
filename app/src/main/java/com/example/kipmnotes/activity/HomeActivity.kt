@@ -30,6 +30,8 @@ class HomeActivity : AppCompatActivity() {
         
         print("hello")
 
+        print("this is a test message from mZos")
+
 //      calling Toolbar function
         setUpToolbar()
 
