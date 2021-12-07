@@ -23,16 +23,10 @@ class HomeActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        print("this is another test from mZos")
-
         mAuth = FirebaseAuth.getInstance()
 
 //      OpenHomeFragment with onStart
         openHome()
-        
-        print("Beta")
-
-        print("this is a test message from mZos")
 
 //      calling Toolbar function
         setUpToolbar()
