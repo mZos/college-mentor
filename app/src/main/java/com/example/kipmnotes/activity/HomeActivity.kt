@@ -1,10 +1,10 @@
 package com.example.kipmnotes.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.example.kipmnotes.R
 import com.example.kipmnotes.databinding.ActivityHomeBinding
