@@ -24,6 +24,10 @@ class HomeActivity : AppCompatActivity() {
         setContentView(view)
 
         firebaseAuth = mAuth
+        mAuth = FirebaseAuth.getInstance()
+
+//      OpenHomeFragment with onStart
+        openHome()
 
         openHomeFragment()
         setUpToolbar()
@@ -31,6 +35,9 @@ class HomeActivity : AppCompatActivity() {
         //make hamburger icon working
         val actionBarDrawerToggle = ActionBarDrawerToggle(
             this, binding.drawerLayout,
+//       make hamburger icon working
+        val actionBarDrawerToggle = ActionBarDrawerToggle(this,binding.drawerLayout,
+
             R.string.open_drawer,
             R.string.close_drawer
         )
@@ -38,6 +45,7 @@ class HomeActivity : AppCompatActivity() {
         actionBarDrawerToggle.syncState()
 
         //Adding navigation clicks actions
+
         binding.navigationView.setNavigationItemSelectedListener {
 
             if (previousMenuItem != null) {
@@ -130,6 +138,8 @@ class HomeActivity : AppCompatActivity() {
 
     //  Creating an function for setting up toolbar with hamburger icon
     private fun setUpToolbar() {
+//  Creating an function for setting up toolbar with hamburger icon
+    private fun setUpToolbar(){
         setSupportActionBar(binding.toolbar)
         supportActionBar?.title = "Home"
         supportActionBar?.setHomeButtonEnabled(true)
@@ -145,7 +155,7 @@ class HomeActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    //    Added backPressFunctionality
+//    Added backPressFunctionality
     override fun onBackPressed() {
         when (supportFragmentManager.findFragmentById(R.id.frame)) {
             !is HomeFragment -> openHomeFragment()

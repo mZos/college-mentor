@@ -26,7 +26,7 @@ class LanguageRecyclerAdapter(val context: Context, private val itemList: ArrayL
         val text = itemList[position]
         holder.txtName.text = text
         holder.layout.setOnClickListener{
-            Toast.makeText(context,"Hello Friends",Toast.LENGTH_SHORT).show()
+
         }
     }
 
