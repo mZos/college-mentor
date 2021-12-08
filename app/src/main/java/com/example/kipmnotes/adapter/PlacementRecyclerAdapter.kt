@@ -10,8 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kipmnotes.R
 
-class PlacementRecyclerAdapter(val context : Context, val itemList:ArrayList<String>):RecyclerView.Adapter<PlacementRecyclerAdapter.PlacementViewHolder>() {
-
+class PlacementRecyclerAdapter(val context : Context, private val itemList:ArrayList<String>):RecyclerView.Adapter<PlacementRecyclerAdapter.PlacementViewHolder>() {
 
     class PlacementViewHolder(view: View): RecyclerView.ViewHolder(view){
         val txtPlacementTopic : TextView = view.findViewById(R.id.txtPlacementTopic)

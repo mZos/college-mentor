@@ -10,12 +10,11 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kipmnotes.R
 
-class SkillRecyclerAdapter(val context:Context,val itemList: ArrayList<String>): RecyclerView.Adapter<SkillRecyclerAdapter.SkillViewHolder>() {
+class SkillRecyclerAdapter(val context:Context, private val itemList: ArrayList<String>): RecyclerView.Adapter<SkillRecyclerAdapter.SkillViewHolder>() {
 
     class SkillViewHolder(view: View):RecyclerView.ViewHolder(view){
         val txtSkillTopic:TextView = view.findViewById(R.id.txtSkillTopic)
         val skillsLayout:RelativeLayout = view.findViewById(R.id.skillsLayout)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SkillViewHolder {
