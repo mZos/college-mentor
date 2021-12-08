@@ -6,9 +6,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.AboutFragment">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/heading"
@@ -25,7 +26,6 @@
             android:id="@+id/txtSubHeading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/heading"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:text="@string/developers"
@@ -35,9 +35,8 @@
 
         <LinearLayout
             android:id="@+id/zakariyaLayout"
-            android:layout_width="485dp"
+            android:layout_width="wrap_content"
             android:layout_height="140dp"
-            android:layout_below="@id/txtSubHeading"
             android:layout_marginStart="15dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="15dp"
@@ -56,7 +55,7 @@
 
             <RelativeLayout
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="match_parent"
                 android:layout_weight="7.0">
 
                 <TextView
@@ -98,9 +97,8 @@
 
         <LinearLayout
             android:id="@+id/masoomLayout"
-            android:layout_width="485dp"
+            android:layout_width="wrap_content"
             android:layout_height="140dp"
-            android:layout_below="@id/zakariyaLayout"
             android:layout_marginStart="15dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="15dp"
@@ -119,7 +117,7 @@
 
             <RelativeLayout
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="match_parent"
                 android:layout_weight="6.0">
 
                 <TextView
@@ -162,9 +160,8 @@
 
         <LinearLayout
             android:id="@+id/vishalLayout"
-            android:layout_width="485dp"
+            android:layout_width="wrap_content"
             android:layout_height="140dp"
-            android:layout_below="@id/masoomLayout"
             android:layout_marginStart="15dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="15dp"
@@ -183,7 +180,7 @@
 
             <RelativeLayout
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="match_parent"
                 android:layout_weight="6.0">
 
                 <TextView
@@ -222,5 +219,5 @@
                     app:drawableEndCompat="@drawable/ic_right_arrow" />
             </RelativeLayout>
         </LinearLayout>
-    </RelativeLayout>
+    </LinearLayout>
 </ScrollView>

@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.example.kipmnotes.R
 import com.example.kipmnotes.databinding.ActivityHomeBinding
-import com.example.kipmnotes.firebase.firebase.mAuth
+import com.example.kipmnotes.firebase.Firebase.mAuth
 import com.example.kipmnotes.fragment.*
 import com.google.firebase.auth.FirebaseAuth
 
@@ -24,13 +24,13 @@ class HomeActivity : AppCompatActivity() {
         setContentView(view)
 
         firebaseAuth = mAuth
-        mAuth = FirebaseAuth.getInstance()
 
         openHomeFragment()
         setUpToolbar()
 
 //       make hamburger icon working
-        val actionBarDrawerToggle = ActionBarDrawerToggle(this,binding.drawerLayout,
+        val actionBarDrawerToggle = ActionBarDrawerToggle(
+            this, binding.drawerLayout,
             R.string.open_drawer,
             R.string.close_drawer
         )
@@ -38,7 +38,6 @@ class HomeActivity : AppCompatActivity() {
         actionBarDrawerToggle.syncState()
 
         //Adding navigation clicks actions
-
         binding.navigationView.setNavigationItemSelectedListener {
 
             if (previousMenuItem != null) {
@@ -130,7 +129,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     //  Creating an function for setting up toolbar with hamburger icon
-    private fun setUpToolbar(){
+    private fun setUpToolbar() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.title = "Home"
         supportActionBar?.setHomeButtonEnabled(true)
@@ -140,7 +139,7 @@ class HomeActivity : AppCompatActivity() {
     //  setting up hamburger icon actions
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
-        if (id == android.R.id.home){
+        if (id == android.R.id.home) {
             binding.drawerLayout.openDrawer(GravityCompat.START)
         }
         return super.onOptionsItemSelected(item)
@@ -150,10 +149,10 @@ class HomeActivity : AppCompatActivity() {
     //    Added backPressFunctionality
     override fun onBackPressed() {
         val frag = supportFragmentManager.findFragmentById(R.id.frame)
-        when(frag){
+        when (frag) {
             !is HomeFragment -> openHomeFragment()
             else -> super.onBackPressed()
         }
 
     }
-    }
+}

@@ -10,7 +10,7 @@ import android.text.style.ForegroundColorSpan
 import android.widget.EditText
 import android.widget.Toast
 import com.example.kipmnotes.databinding.ActivityRegisterBinding
-import com.example.kipmnotes.firebase.firebase.mAuth
+import com.example.kipmnotes.firebase.Firebase.mAuth
 import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
@@ -39,7 +39,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    //get data and create account using firebase
+    //get data and create account using Firebase
     private fun firebaseRegister() {
         val fullName = binding.etRegisterName.text.toString()
         val collegeName = binding.etRegisterCollege.text.toString()
