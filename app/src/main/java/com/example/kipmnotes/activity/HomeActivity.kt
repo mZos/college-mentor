@@ -26,20 +26,11 @@ class HomeActivity : AppCompatActivity() {
         firebaseAuth = mAuth
         mAuth = FirebaseAuth.getInstance()
 
-//      OpenHomeFragment with onStart
-        openHome()
-
-        print("this print from college adddddddd")
-
         openHomeFragment()
         setUpToolbar()
 
-        //make hamburger icon working
-        val actionBarDrawerToggle = ActionBarDrawerToggle(
-            this, binding.drawerLayout,
 //       make hamburger icon working
         val actionBarDrawerToggle = ActionBarDrawerToggle(this,binding.drawerLayout,
-
             R.string.open_drawer,
             R.string.close_drawer
         )
@@ -139,8 +130,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
     //  Creating an function for setting up toolbar with hamburger icon
-    private fun setUpToolbar() {
-//  Creating an function for setting up toolbar with hamburger icon
     private fun setUpToolbar(){
         setSupportActionBar(binding.toolbar)
         supportActionBar?.title = "Home"
@@ -151,17 +140,20 @@ class HomeActivity : AppCompatActivity() {
     //  setting up hamburger icon actions
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
-        if (id == android.R.id.home) {
+        if (id == android.R.id.home){
             binding.drawerLayout.openDrawer(GravityCompat.START)
         }
         return super.onOptionsItemSelected(item)
     }
 
-//    Added backPressFunctionality
+
+    //    Added backPressFunctionality
     override fun onBackPressed() {
-        when (supportFragmentManager.findFragmentById(R.id.frame)) {
+        val frag = supportFragmentManager.findFragmentById(R.id.frame)
+        when(frag){
             !is HomeFragment -> openHomeFragment()
             else -> super.onBackPressed()
         }
+
     }
-}
+    }
