@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/imgLogin"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="100dp"
         android:src="@drawable/loginlogo"
         android:layout_centerHorizontal="true"
