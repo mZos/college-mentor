@@ -1,7 +1,6 @@
 package com.example.kipmnotes.adapter
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kipmnotes.R
 
-class LanguageRecyclerAdapter(val context: Context,val itemList: ArrayList<String>):RecyclerView.Adapter<LanguageRecyclerAdapter.LanguageViewHolder>() {
-
+class LanguageRecyclerAdapter(val context: Context, private val itemList: ArrayList<String>):RecyclerView.Adapter<LanguageRecyclerAdapter.LanguageViewHolder>() {
 
     class LanguageViewHolder(view: View):RecyclerView.ViewHolder(view){
         val txtName :TextView = view.findViewById(R.id.txtName)
@@ -20,7 +18,6 @@ class LanguageRecyclerAdapter(val context: Context,val itemList: ArrayList<Strin
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LanguageViewHolder {
-
         val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_language_single_row,parent,false)
         return LanguageViewHolder(view)
     }
@@ -31,7 +28,6 @@ class LanguageRecyclerAdapter(val context: Context,val itemList: ArrayList<Strin
         holder.layout.setOnClickListener{
             Toast.makeText(context,"Hello Friends",Toast.LENGTH_SHORT).show()
         }
-
     }
 
     override fun getItemCount(): Int {

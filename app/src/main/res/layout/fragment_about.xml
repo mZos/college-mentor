@@ -22,7 +22,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/subHeading"
+            android:id="@+id/txtSubHeading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/heading"
@@ -37,7 +37,7 @@
             android:id="@+id/zakariyaLayout"
             android:layout_width="485dp"
             android:layout_height="140dp"
-            android:layout_below="@id/subHeading"
+            android:layout_below="@id/txtSubHeading"
             android:layout_marginStart="15dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="15dp"
@@ -60,7 +60,7 @@
                 android:layout_weight="7.0">
 
                 <TextView
-                    android:id="@+id/zakariyaName"
+                    android:id="@+id/txtZakariyaName"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
                     android:layout_marginStart="10dp"
@@ -71,10 +71,10 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/zakariyaWork"
+                    android:id="@+id/txtZakariyaWork"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/zakariyaName"
+                    android:layout_below="@+id/txtZakariyaName"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="2dp"
                     android:text="@string/android_developer"
@@ -83,17 +83,16 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/aboutZakariya"
+                    android:id="@+id/txtAboutZakariya"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/zakariyaWork"
+                    android:layout_below="@+id/txtZakariyaWork"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/zakariyaLinkedin"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:drawableEndCompat="@drawable/ic_right_arrow" />
-
             </RelativeLayout>
         </LinearLayout>
 
@@ -124,7 +123,7 @@
                 android:layout_weight="6.0">
 
                 <TextView
-                    android:id="@+id/masoomName"
+                    android:id="@+id/txtMasoomName"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
                     android:layout_marginStart="10dp"
@@ -135,10 +134,10 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/masoomWork"
+                    android:id="@+id/txtMasoomWork"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/masoomName"
+                    android:layout_below="@+id/txtMasoomName"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="2dp"
                     android:text="@string/android_developer"
@@ -147,10 +146,10 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/aboutMasoom"
+                    android:id="@+id/txtAboutMasoom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/masoomWork"
+                    android:layout_below="@+id/txtMasoomWork"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/masoomLinkedin"
@@ -188,7 +187,7 @@
                 android:layout_weight="6.0">
 
                 <TextView
-                    android:id="@+id/vishalName"
+                    android:id="@+id/txtVishalName"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
                     android:layout_marginStart="10dp"
@@ -199,10 +198,10 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/vishalWork"
+                    android:id="@+id/txtVishalWork"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/vishalName"
+                    android:layout_below="@+id/txtVishalName"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="2dp"
                     android:text="@string/android_developer"
@@ -211,10 +210,10 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/aboutVishal"
+                    android:id="@+id/txtAboutVishal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/vishalWork"
+                    android:layout_below="@+id/txtVishalWork"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/vishalLinkedin"
@@ -222,10 +221,6 @@
                     android:textStyle="bold"
                     app:drawableEndCompat="@drawable/ic_right_arrow" />
             </RelativeLayout>
-
         </LinearLayout>
-
     </RelativeLayout>
-
-
 </ScrollView>

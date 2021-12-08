@@ -10,12 +10,11 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kipmnotes.R
 
-class StudyRecyclerAdapter(val context: Context, val itemList: ArrayList<String>): RecyclerView.Adapter<StudyRecyclerAdapter.StudyViewHolder>() {
+class StudyRecyclerAdapter(val context: Context, private val itemList: ArrayList<String>): RecyclerView.Adapter<StudyRecyclerAdapter.StudyViewHolder>() {
 
     class StudyViewHolder(view: View): RecyclerView.ViewHolder(view){
         val txtStudyTopics: TextView = view.findViewById(R.id.txtStudyTopics)
         val studyLayout: RelativeLayout = view.findViewById(R.id.studyLayout)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudyViewHolder {

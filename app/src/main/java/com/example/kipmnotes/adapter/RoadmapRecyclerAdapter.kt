@@ -10,12 +10,11 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kipmnotes.R
 
-class RoadmapRecyclerAdapter(val context:Context,val itemList:ArrayList<String>):RecyclerView.Adapter<RoadmapRecyclerAdapter.RoadmapViewHolder>() {
+class RoadmapRecyclerAdapter(val context:Context, private val itemList:ArrayList<String>):RecyclerView.Adapter<RoadmapRecyclerAdapter.RoadmapViewHolder>() {
 
     class RoadmapViewHolder(view: View): RecyclerView.ViewHolder(view){
         val txtRoadmaps : TextView = view.findViewById(R.id.txtRoadmaps)
         val roadmapLayout : RelativeLayout = view.findViewById(R.id.roadmapLayout)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RoadmapViewHolder {

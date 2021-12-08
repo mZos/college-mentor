@@ -13,15 +13,7 @@ import com.example.kipmnotes.R
 import com.example.kipmnotes.adapter.LanguageRecyclerAdapter
 import com.example.kipmnotes.databinding.FragmentHomeBinding
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-
 class LanguageFragment : Fragment() {
-
-
-    private var param1: String? = null
-    private var param2: String? = null
 
     lateinit var recyclerLanguage:RecyclerView
     lateinit var layoutManager: RecyclerView.LayoutManager
@@ -37,22 +29,11 @@ class LanguageFragment : Fragment() {
         "  Learn R"
         )
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val view = inflater.inflate(R.layout.fragment_language,container,false)
-
 
         recyclerLanguage = view.findViewById(R.id.recyclerLanguage)
         layoutManager = LinearLayoutManager(activity)
@@ -68,17 +49,5 @@ class LanguageFragment : Fragment() {
         recyclerLanguage.adapter = recyclerAdapter
         recyclerLanguage.layoutManager = layoutManager
         return view
-
-    }
-
-    companion object {
-
-        fun newInstance(param1: String, param2: String) =
-            LanguageFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }
