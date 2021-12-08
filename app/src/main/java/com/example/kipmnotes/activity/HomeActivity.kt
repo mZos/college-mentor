@@ -29,7 +29,7 @@ class HomeActivity : AppCompatActivity() {
 //      OpenHomeFragment with onStart
         openHome()
 
-        print("this print from college")
+        print("this print from college adddddddd")
 
         openHomeFragment()
         setUpToolbar()
