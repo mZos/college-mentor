@@ -7,28 +7,26 @@
     android:background="@color/dull_white"
     tools:context=".activity.RegisterActivity">
 
-    <TextView
-        android:id="@+id/txtRegisterLogo"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:text="@string/college_mentor"
-        android:textSize="35sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        android:layout_centerHorizontal="true"/>
+    <ImageView
+        android:id="@+id/registerLogo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="25dp"
+        android:src="@drawable/app_icon"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="5dp"/>
 
     <TextView
         android:id="@+id/txtMSG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/create_an_account"
-        android:layout_below="@+id/txtRegisterLogo"
+        android:layout_below="@+id/registerLogo"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:layout_marginStart="20dp"
-        android:textSize="30sp"/>
+        android:layout_marginStart="25dp"
+        android:textSize="30sp"
+        android:layout_marginBottom="5dp"/>
 
     <TextView
         android:id="@+id/txtMSG1"
@@ -38,7 +36,8 @@
         android:layout_below="@+id/txtMSG"
         android:textColor="#616161"
         android:textStyle="normal"
-        android:layout_marginStart="22dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="17dp"
         android:textSize="18sp"/>
 
     <EditText
@@ -48,7 +47,6 @@
         android:layout_marginEnd="28dp"
         android:layout_marginStart="28dp"
         android:hint="@string/name"
-        android:layout_marginTop="15dp"
         android:textSize="15sp"
         android:inputType="text"
         android:maxLength="25"
@@ -154,7 +152,8 @@
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_below="@id/etRegisterConfirmPass"
-        android:text="@string/register"
+        android:text="@string/sign_up"
+        android:textAllCaps="false"
         android:textColor="@color/black"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="28dp"

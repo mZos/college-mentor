@@ -7,14 +7,11 @@
     android:background="@color/app_color"
     tools:context=".activity.SplashScreenActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:gravity="center"
-        android:text="@string/college_mentor"
-        android:textSize="45sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/app_icon"
         android:layout_centerInParent="true"/>
 
 </RelativeLayout>

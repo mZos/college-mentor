@@ -7,17 +7,38 @@
     android:background="@color/dull_white"
     tools:context=".activity.LoginActivity">
 
+    <ImageView
+        android:id="@+id/loginLogo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="25dp"
+        android:src="@drawable/app_icon"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="5dp"/>
+
     <TextView
-        android:id="@+id/txtLoginLogo"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:text="@string/college_mentor"
-        android:textSize="35sp"
+        android:id="@+id/txtMSG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        android:layout_below="@+id/loginLogo"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginStart="25dp"
+        android:textSize="30sp"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/txtMSG1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in_to_conitnue"
+        android:layout_below="@+id/txtMSG"
+        android:textColor="#616161"
+        android:textStyle="normal"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="15dp"
+        android:textSize="18sp"/>
 
     <EditText
         android:id="@+id/etLoginEmail"
@@ -29,7 +50,7 @@
         android:textSize="15sp"
         android:inputType="textEmailAddress"
         android:maxLength="25"
-        android:layout_below="@id/txtLoginLogo"
+        android:layout_below="@id/txtMSG1"
         android:layout_centerHorizontal="true"
         android:drawableStart="@drawable/ic_email"
         android:drawablePadding="5dp"
@@ -59,7 +80,8 @@
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_below="@id/etLoginPass"
-        android:text="@string/login"
+        android:text="Sign-In"
+        android:textAllCaps="false"
         android:textColor="@color/black"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="28dp"

@@ -60,6 +60,9 @@
     <string name="vishal_kumar">Vishal Kumar</string>
     <string name="mohd_zakariya">Mohd Zakariya</string>
     <string name="college_mentor">College Mentor</string>
+    <string name="sign_up">Sign-Up</string>
+    <string name="welcome">Welcome</string>
+    <string name="sign_in_to_conitnue">Sign-In to Conitnue!</string>
 
 
 </resources>
