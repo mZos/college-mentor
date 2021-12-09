@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.AboutFragment">
 
     <LinearLayout
@@ -34,190 +34,174 @@
             android:textStyle="bold" />
 
         <LinearLayout
-            android:id="@+id/zakariyaLayout"
             android:layout_width="wrap_content"
-            android:layout_height="140dp"
+            android:layout_height="130dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/customborder"
+            android:background="@drawable/about_page_border"
             android:orientation="horizontal"
             android:weightSum="11">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_height="110dp"
                 android:layout_weight="4.0"
                 android:src="@drawable/zakariya"
                 app:civ_border_color="@color/grey"
                 app:civ_border_width="1dp" />
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="7.0">
+                android:layout_weight="7.0"
+                android:orientation="vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="0dp">
 
                 <TextView
                     android:id="@+id/txtZakariyaName"
                     android:layout_width="match_parent"
-                    android:layout_height="28dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="@string/mohammad_zakariya"
+                    android:text="@string/mohd_zakariya"
                     android:textColor="@color/black"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txtZakariyaWork"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txtZakariyaName"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="1dp"
                     android:text="@string/android_developer"
                     android:textColor="#686868"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/txtAboutZakariya"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txtZakariyaWork"
-                    android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/zakariyaLinkedin"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:textSize="14sp"
                     app:drawableEndCompat="@drawable/ic_right_arrow" />
-            </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/masoomLayout"
             android:layout_width="wrap_content"
-            android:layout_height="140dp"
+            android:layout_height="130dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/customborder"
+            android:background="@drawable/about_page_border"
             android:orientation="horizontal"
             android:weightSum="11">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_height="110dp"
                 android:layout_weight="4.0"
                 android:src="@drawable/masoom"
                 app:civ_border_color="@color/grey"
                 app:civ_border_width="1dp" />
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="6.0">
+                android:layout_weight="7.0"
+                android:orientation="vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="0dp">
 
                 <TextView
                     android:id="@+id/txtMasoomName"
                     android:layout_width="match_parent"
-                    android:layout_height="28dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:text="@string/masoom_zaid"
                     android:textColor="@color/black"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txtMasoomWork"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txtMasoomName"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="1dp"
                     android:text="@string/android_developer"
                     android:textColor="#686868"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/txtAboutMasoom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txtMasoomWork"
-                    android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/masoomLinkedin"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:textSize="14sp"
                     app:drawableEndCompat="@drawable/ic_right_arrow" />
-
-            </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/vishalLayout"
             android:layout_width="wrap_content"
-            android:layout_height="140dp"
+            android:layout_height="130dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/customborder"
+            android:background="@drawable/about_page_border"
             android:orientation="horizontal"
             android:weightSum="11">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_height="110dp"
                 android:layout_weight="4.0"
                 android:src="@drawable/vishal"
                 app:civ_border_color="@color/grey"
                 app:civ_border_width="1dp" />
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="6.0">
+                android:layout_weight="7.0"
+                android:orientation="vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="0dp">
 
                 <TextView
                     android:id="@+id/txtVishalName"
                     android:layout_width="match_parent"
-                    android:layout_height="28dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:text="@string/vishal_kumar"
                     android:textColor="@color/black"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txtVishalWork"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txtVishalName"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="1dp"
                     android:text="@string/android_developer"
                     android:textColor="#686868"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/txtAboutVishal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txtVishalWork"
-                    android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/vishalLinkedin"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:textSize="14sp"
                     app:drawableEndCompat="@drawable/ic_right_arrow" />
-            </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
