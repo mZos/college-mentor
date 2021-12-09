@@ -39,7 +39,7 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="_1st_year_of_education">1st(year of education)</string>
     <string name="computer_science_branch">Computer Science(Branch)</string>
-    <string name="bachler_of_engineering_course">Bachler of Engineering(Course)</string>
+    <string name="bachler_of_engineering_course">Bachelor of Engineering(Course)</string>
     <string name="institution_name">Institution Name</string>
     <string name="name">Name</string>
     <string name="sign_up_to_get_started">Sign-up to get started</string>
@@ -47,7 +47,7 @@
     <string name="interview_questions">Interview Questions</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="page_in_progress">Page in Progress...</string>
+    <string name="page_in_progress">Page in Progress…</string>
     <string name="roadmaps">Roadmaps</string>
     <string name="demo_string">Demo String</string>
     <string name="made_with_love_in_india">Made with love in India</string>
@@ -59,6 +59,7 @@
     <string name="vishalLinkedin"><a href="https://www.linkedin.com/in/vishal-kumar-a3b050222/">Know more</a></string>
     <string name="vishal_kumar">Vishal Kumar</string>
     <string name="mohd_zakariya">Mohd Zakariya</string>
+    <string name="college_mentor">College-Mentor</string>
 
 
 </resources>
