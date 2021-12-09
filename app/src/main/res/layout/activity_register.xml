@@ -7,13 +7,16 @@
     android:background="@color/dull_white"
     tools:context=".activity.RegisterActivity">
 
-
-    <ImageView
-        android:id="@+id/imgLogin"
-        android:layout_width="300dp"
+    <TextView
+        android:id="@+id/txtRegisterLogo"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/loginlogo"
+        android:gravity="center"
+        android:text="@string/college_mentor"
+        android:textSize="35sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"/>
 
     <TextView
@@ -21,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/create_an_account"
-        android:layout_below="@+id/imgLogin"
+        android:layout_below="@+id/txtRegisterLogo"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginStart="20dp"

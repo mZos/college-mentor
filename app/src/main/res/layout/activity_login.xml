@@ -7,13 +7,17 @@
     android:background="@color/dull_white"
     tools:context=".activity.LoginActivity">
 
-    <ImageView
-        android:id="@+id/imgLogin"
-        android:layout_width="250dp"
+    <TextView
+        android:id="@+id/txtLoginLogo"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:src="@drawable/loginlogo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"/>
+        android:gravity="center"
+        android:text="@string/college_mentor"
+        android:textSize="35sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"/>
 
     <EditText
         android:id="@+id/etLoginEmail"
@@ -25,7 +29,7 @@
         android:textSize="15sp"
         android:inputType="textEmailAddress"
         android:maxLength="25"
-        android:layout_below="@id/imgLogin"
+        android:layout_below="@id/txtLoginLogo"
         android:layout_centerHorizontal="true"
         android:drawableStart="@drawable/ic_email"
         android:drawablePadding="5dp"
