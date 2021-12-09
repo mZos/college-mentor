@@ -10,11 +10,28 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kipmnotes.R
 
-class LanguageRecyclerAdapter(val context: Context, private val itemList: ArrayList<String>):RecyclerView.Adapter<LanguageRecyclerAdapter.LanguageViewHolder>() {
+class LanguageRecyclerAdapter(
 
-    class LanguageViewHolder(view: View):RecyclerView.ViewHolder(view){
+    val context: Context,
+    private val itemList: ArrayList<String>,
+    val listener : OnLanguageClickListener
+
+    ): RecyclerView.Adapter<LanguageRecyclerAdapter.LanguageViewHolder>() {
+
+    inner class LanguageViewHolder(view: View):RecyclerView.ViewHolder(view),View.OnClickListener{
         val txtName :TextView = view.findViewById(R.id.txtName)
         val layout :RelativeLayout = view.findViewById(R.id.layout)
+
+        init {
+            view.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val position:Int = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onLanguageClick(position)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LanguageViewHolder {
@@ -25,12 +42,14 @@ class LanguageRecyclerAdapter(val context: Context, private val itemList: ArrayL
     override fun onBindViewHolder(holder: LanguageViewHolder, position: Int) {
         val text = itemList[position]
         holder.txtName.text = text
-        holder.layout.setOnClickListener{
-
-        }
     }
 
     override fun getItemCount(): Int {
         return itemList.size
     }
+
+    interface OnLanguageClickListener{
+        fun onLanguageClick(position: Int)
+    }
+
 }
