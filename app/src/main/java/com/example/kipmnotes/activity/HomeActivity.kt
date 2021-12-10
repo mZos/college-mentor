@@ -3,6 +3,7 @@ package com.example.kipmnotes.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -11,6 +12,8 @@ import com.example.kipmnotes.databinding.ActivityHomeBinding
 import com.example.kipmnotes.firebase.Firebase.mAuth
 import com.example.kipmnotes.fragment.*
 import com.google.firebase.auth.FirebaseAuth
+import java.io.ByteArrayOutputStream
+import java.io.IOException
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -119,7 +122,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     //    OpenHomeFunction
-    private fun openHomeFragment() {
+    public fun openHomeFragment() {
         val fragment = HomeFragment()
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame, fragment)

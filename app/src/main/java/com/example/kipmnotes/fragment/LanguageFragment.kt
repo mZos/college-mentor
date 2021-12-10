@@ -12,16 +12,16 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kipmnotes.R
+import com.example.kipmnotes.activity.HomeActivity
 import com.example.kipmnotes.adapter.LanguageRecyclerAdapter
-import com.example.kipmnotes.databinding.FragmentHomeBinding
-import com.example.kipmnotes.languageFragments.CPPFragment
-import com.google.android.gms.dynamic.SupportFragmentWrapper
+import com.example.kipmnotes.languageActivity.LanguageActivity
 
 class LanguageFragment : Fragment(),LanguageRecyclerAdapter.OnLanguageClickListener  {
 
     lateinit var recyclerLanguage:RecyclerView
     lateinit var layoutManager: RecyclerView.LayoutManager
     lateinit var recyclerAdapter:LanguageRecyclerAdapter
+    lateinit var bundle: Bundle
 
     val languageList = arrayListOf<String>(
         "  Learn Python",
@@ -48,7 +48,6 @@ class LanguageFragment : Fragment(),LanguageRecyclerAdapter.OnLanguageClickListe
                 recyclerLanguage.context,(layoutManager as LinearLayoutManager).orientation
             )
         )
-
         recyclerAdapter = LanguageRecyclerAdapter(activity as Context,languageList,this)
         recyclerLanguage.adapter = recyclerAdapter
         recyclerLanguage.layoutManager = layoutManager
@@ -57,8 +56,10 @@ class LanguageFragment : Fragment(),LanguageRecyclerAdapter.OnLanguageClickListe
 
     override fun onLanguageClick(position: Int) {
         Toast.makeText(context,"item $position",Toast.LENGTH_LONG).show()
-        if (position == 3){
-            
+        activity?.let{
+            val intent = Intent (it, LanguageActivity::class.java)
+            intent.putExtra("position" , position)
+            it.startActivity(intent)
         }
     }
 

@@ -1,11 +1,10 @@
-package com.example.kipmnotes.languageFragments
+package com.example.kipmnotes.languageActivity
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.kipmnotes.R
+import androidx.fragment.app.Fragment
 import com.example.kipmnotes.databinding.FragmentCPPBinding
 
 class CPPFragment : Fragment() {
