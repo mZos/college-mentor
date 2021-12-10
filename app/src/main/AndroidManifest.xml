@@ -8,7 +8,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_applebel"
-        android:label="@string/app_name"
+        android:label="@string/college_mentor"
         android:roundIcon="@mipmap/ic_applebel_round"
         android:supportsRtl="true"
         android:resizeableActivity="false"
