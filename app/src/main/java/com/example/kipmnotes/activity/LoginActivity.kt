@@ -1,7 +1,10 @@
 package com.example.kipmnotes.activity
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.net.ConnectivityManager
+import android.net.NetworkRequest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableString
@@ -9,9 +12,12 @@ import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.widget.EditText
 import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.lifecycle.lifecycleScope
 import com.example.kipmnotes.R
 import com.example.kipmnotes.databinding.ActivityLoginBinding
+import com.facebook.appevents.ml.Model.Companion.build
+import com.facebook.internal.instrument.InstrumentData.Builder.build
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -26,6 +32,7 @@ import java.lang.Exception
 const val REQUEST_CODE_SIGN_IN = 0
 
 class LoginActivity : AppCompatActivity() {
+
     lateinit var binding: ActivityLoginBinding
     private lateinit var googleSignInClient: GoogleSignInClient
 

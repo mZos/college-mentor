@@ -25,6 +25,7 @@ class LanguageActivity : AppCompatActivity() {
 
         val position = intent.getIntExtra("position",-1)
 
+//      intent according to positions
         when(position){
             2 -> {
                  supportFragmentManager.beginTransaction()
@@ -33,6 +34,7 @@ class LanguageActivity : AppCompatActivity() {
                 supportActionBar?.title = "Learn C++"
             }
         }
+
     }
 
     //  Creating an function for setting up toolbar with hamburger icon
