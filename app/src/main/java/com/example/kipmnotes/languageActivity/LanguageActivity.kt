@@ -27,6 +27,14 @@ class LanguageActivity : AppCompatActivity() {
 
 //      intent according to positions
         when(position){
+
+            0 -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.languageFrame,PythonFragment())
+                    .commit()
+                supportActionBar?.title = "Learn Python"
+            }
+
             2 -> {
                  supportFragmentManager.beginTransaction()
                      .replace(R.id.languageFrame,CPPFragment())

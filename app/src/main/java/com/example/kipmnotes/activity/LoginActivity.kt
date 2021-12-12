@@ -64,6 +64,11 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        // Add Github Authentication
+        binding.githubLoginButton.setOnClickListener{
+            val intent = Intent(this,GithubAuthActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     //  change color for designing purpose

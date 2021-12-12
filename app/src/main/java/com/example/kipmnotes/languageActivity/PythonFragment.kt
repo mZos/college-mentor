@@ -1,51 +1,44 @@
 package com.example.kipmnotes.languageActivity
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-
-import androidx.fragment.app.Fragment
-
+import com.example.kipmnotes.R
 import com.example.kipmnotes.databinding.FragmentCPPBinding
+import com.example.kipmnotes.databinding.FragmentPythonBinding
 import java.io.BufferedReader
-
 import java.io.InputStreamReader
 
+class PythonFragment : Fragment() {
 
-
-
-class CPPFragment : Fragment() {
-
-    private var _binding: FragmentCPPBinding? = null
+    private var _binding: FragmentPythonBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentCPPBinding.inflate(inflater, container, false)
+
+        _binding = FragmentPythonBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        val `is` = resources.openRawResource(com.example.kipmnotes.R.raw.masoom)
-        val br = BufferedReader(InputStreamReader(`is`))
+        val content = resources.openRawResource(R.raw.pythonotes)
+        val br = BufferedReader(InputStreamReader(content))
         var line: String
-        var entireFile = ""
+        var entireFile = " "
 
         try {
-            while((br.readLine().also { line = it }) != null) { // <--------- place readLine() inside loop
-                entireFile += line + " "
-
+            while((br.readLine().also { line = it }) != null) {
+                entireFile += line + "\n"
             }
         } catch (e:Exception) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-
-        binding.cppContent.text = entireFile
+        binding.pythonContent.text = entireFile
 
         return view
     }
+
 }
