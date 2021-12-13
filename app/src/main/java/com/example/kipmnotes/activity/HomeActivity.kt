@@ -28,7 +28,6 @@ class HomeActivity : AppCompatActivity() {
 
         firebaseAuth = mAuth
 
-        print("hello")
         openHomeFragment()
         setUpToolbar()
 
