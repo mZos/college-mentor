@@ -6,7 +6,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kipmnotes.databinding.ActivityGithubAuthBinding
-import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
@@ -15,9 +14,8 @@ import com.google.firebase.auth.OAuthProvider
 
 
 class GithubAuthActivity : AppCompatActivity() {
-
-    lateinit var binding : ActivityGithubAuthBinding
-    lateinit var auth:FirebaseAuth
+    lateinit var binding: ActivityGithubAuthBinding
+    lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,13 +25,12 @@ class GithubAuthActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        binding.btnGithubLogin.setOnClickListener{
+        binding.btnGithubLogin.setOnClickListener {
             val email = binding.etGithubEmail.text.toString()
 
-            if (email.isEmpty()){
+            if (email.isEmpty()) {
                 setErrors(binding.etGithubEmail, "Please enter your email")
-            }
-            else{
+            } else {
                 val provider = OAuthProvider.newBuilder("github.com")
 
                 provider.addCustomParameter("login", email)
@@ -45,37 +42,34 @@ class GithubAuthActivity : AppCompatActivity() {
                 }
                 provider.scopes = scopes
 
-                val pendingResultTask: Task<AuthResult> = auth.getPendingAuthResult() as Task<AuthResult>
+                val pendingResultTask: Task<AuthResult>? = auth.pendingAuthResult
                 if (pendingResultTask != null) {
                     pendingResultTask
                         .addOnSuccessListener(
-                            OnSuccessListener<AuthResult?> {
+                            OnSuccessListener {
 
                             })
-                        .addOnFailureListener(
-                            OnFailureListener {
-                                Toast.makeText(this,it.message,Toast.LENGTH_LONG).show()
-                            })
+                        .addOnFailureListener {
+                            Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+                        }
                 } else {
                     auth
                         .startActivityForSignInWithProvider( /* activity= */this, provider.build())
-                        .addOnSuccessListener(
-                            OnSuccessListener<AuthResult?> {
-                                openNextActivity()
-                            })
-                        .addOnFailureListener(
-                            OnFailureListener {
-                                Toast.makeText(this,it.message,Toast.LENGTH_LONG).show()
-                            })
+                        .addOnSuccessListener {
+                            openNextActivity()
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+                        }
                 }
             }
         }
     }
 
-//  Open New Activity
-    fun openNextActivity(){
-        val intent = Intent(this,HomeActivity::class.java)
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or  Intent.FLAG_ACTIVITY_NEW_TASK)
+    //  Open New Activity
+    private fun openNextActivity() {
+        val intent = Intent(this, HomeActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent)
         finish()
     }
