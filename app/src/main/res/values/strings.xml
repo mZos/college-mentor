@@ -63,6 +63,8 @@
     <string name="sign_up">Sign-Up</string>
     <string name="welcome">Welcome</string>
     <string name="sign_in_to_conitnue">Sign-In to Conitnue!</string>
+    <string name="github_login">Github Login</string>
+    <string name="sign_in_with_github">Sign In With Github:</string>
 
 
 </resources>

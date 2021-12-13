@@ -54,7 +54,7 @@ class GithubAuthActivity : AppCompatActivity() {
                         }
                 } else {
                     auth
-                        .startActivityForSignInWithProvider( /* activity= */this, provider.build())
+                        .startActivityForSignInWithProvider(this, provider.build())
                         .addOnSuccessListener {
                             openNextActivity()
                         }
