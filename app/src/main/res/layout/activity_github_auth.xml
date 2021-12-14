@@ -27,7 +27,7 @@
     <EditText
         android:id="@+id/etGithubEmail"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="42dp"
         android:layout_marginEnd="28dp"
         android:layout_marginTop="15dp"
         android:layout_marginStart="28dp"
@@ -38,18 +38,18 @@
         android:drawableStart="@drawable/ic_email"
         android:drawablePadding="10dp"
         android:textColorHint="@color/common_google_signin_btn_text_light_default"
-        android:background="@color/grey"/>
+        android:background="@drawable/about_page_border"/>
 
     <Button
         android:id="@+id/btnGithubLogin"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="42dp"
         android:text="@string/github_login"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="28dp"
-        android:backgroundTint="@color/black"
+        android:background="@drawable/about_page_border"
         android:layout_marginStart="28dp"/>
 
 </LinearLayout>
