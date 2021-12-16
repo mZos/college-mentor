@@ -8,7 +8,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.kipmnotes"
+        applicationId "com.example.collegementor"
         minSdk 21
         targetSdk 30
         versionCode 1
