@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="collegementor">
+    package="com.example.collegementor">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,25 +16,25 @@
         android:theme="@style/Theme.KipmNotes"
         tools:targetApi="n">
         <activity
-            android:name="com.example.collegementor.activity.GithubAuthActivity"
+            android:name=".activity.GithubAuthActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.collegementor.languageActivity.LanguageActivity"
+            android:name=".languageActivity.LanguageActivity"
             android:configChanges="orientation|screenSize"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.example.collegementor.activity.RegisterActivity"
+            android:name=".activity.RegisterActivity"
             android:configChanges="orientation|screenSize"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.example.collegementor.activity.LoginActivity"
+            android:name=".activity.LoginActivity"
             android:configChanges="orientation|screenSize"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.example.collegementor.activity.SplashScreenActivity"
+            android:name=".activity.SplashScreenActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait">
@@ -45,7 +45,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.collegementor.activity.HomeActivity"
+            android:name=".activity.HomeActivity"
             android:configChanges="orientation|screenSize"
             android:exported="false"
             android:screenOrientation="portrait" />
