@@ -6,19 +6,23 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegementor.R
 
-class StudyRecyclerAdapter(val context: Context, private val itemList: ArrayList<String>): RecyclerView.Adapter<StudyRecyclerAdapter.StudyViewHolder>() {
+class StudyRecyclerAdapter(
+    val context: Context,
+    private val itemList: ArrayList<String>,
+    val onClickListener: OnClickListener
+) : RecyclerView.Adapter<StudyRecyclerAdapter.StudyViewHolder>() {
 
-    class StudyViewHolder(view: View): RecyclerView.ViewHolder(view){
+    class StudyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val txtStudyTopics: TextView = view.findViewById(R.id.txtStudyTopics)
         val studyLayout: RelativeLayout = view.findViewById(R.id.studyLayout)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_study_single_row,parent,false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.recycler_study_single_row, parent, false)
         return StudyViewHolder(view)
     }
 
@@ -26,11 +30,15 @@ class StudyRecyclerAdapter(val context: Context, private val itemList: ArrayList
         val text = itemList[position]
         holder.txtStudyTopics.text = text
         holder.studyLayout.setOnClickListener {
-            Toast.makeText(context,"Study Touch", Toast.LENGTH_SHORT).show()
+            onClickListener.onClick(position)
         }
     }
 
     override fun getItemCount(): Int {
         return itemList.size
+    }
+
+    class OnClickListener(val clickListener: (itemPosition: Int) -> Unit) {
+        fun onClick(itemPosition: Int) = clickListener(itemPosition)
     }
 }
