@@ -1,18 +1,72 @@
 {
   "project_info": {
     "project_number": "876325107894",
+    "firebase_url": "https://kipm-study-and-placements-app-default-rtdb.firebaseio.com",
     "project_id": "kipm-study-and-placements-app",
     "storage_bucket": "kipm-study-and-placements-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:876325107894:android:cdd96ee95f3a11a28d4e17",
+        "mobilesdk_app_id": "1:876325107894:android:f2722111f956175a8d4e17",
         "android_client_info": {
           "package_name": "com.example.collegementor"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "876325107894-tkl563a76vk84gm0lter78qkrpmn2d0t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.collegementor",
+            "certificate_hash": "0e505850d1c9eb8bd5d2b9dc803316e7f00e17c6"
+          }
+        },
+        {
+          "client_id": "876325107894-1as5g11ba4c4ikf9jtgdj3c775i4gb2r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEFzPdIU4KP3l2lEjefEjdHdeE5Dztd4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876325107894-1as5g11ba4c4ikf9jtgdj3c775i4gb2r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876325107894:android:cdd96ee95f3a11a28d4e17",
+        "android_client_info": {
+          "package_name": "com.example.kipmnotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876325107894-anukhltj2tcutpmbq35prm104ltgkmrs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kipmnotes",
+            "certificate_hash": "59d405a4aa6ab17c8cdcb62dd0d691d6ac60db04"
+          }
+        },
+        {
+          "client_id": "876325107894-pj1sk49764e46mooj8ivbrn7c7dt5nvd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kipmnotes",
+            "certificate_hash": "0e505850d1c9eb8bd5d2b9dc803316e7f00e17c6"
+          }
+        },
         {
           "client_id": "876325107894-1as5g11ba4c4ikf9jtgdj3c775i4gb2r.apps.googleusercontent.com",
           "client_type": 3
