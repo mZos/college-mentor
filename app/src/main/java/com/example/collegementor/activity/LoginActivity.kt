@@ -2,41 +2,45 @@ package com.example.collegementor.activity
 
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
+import android.util.Log
+import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.collegementor.R
 import com.example.collegementor.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.*
-import java.lang.Exception
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 const val REQUEST_CODE_SIGN_IN = 0
-
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     lateinit var binding: ActivityLoginBinding
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
     private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
 
         //connect to app
         firebaseAuth = Firebase.auth
@@ -44,24 +48,40 @@ class LoginActivity : AppCompatActivity() {
         //Design Register text
         changeColorTextView()
 
-        //Add click listeners on LoginButton
-        binding.btnLogin.setOnClickListener {
-            loginUser()
-        }
-        //Add click Listeners on GoogleSignInButton
-        binding.googleLoginButton.setOnClickListener {
-            googleSignINMethod()
-        }
-        // Add clicks Listeners op Register text
-        binding.txtRegister.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-        // Add Github Authentication
-        binding.githubLoginButton.setOnClickListener{
-            val intent = Intent(this,GithubAuthActivity::class.java)
-            startActivity(intent)
+        binding.btnLogin.setOnClickListener(this)
+        binding.googleLoginButton.setOnClickListener(this)
+        binding.txtRegister.setOnClickListener(this)
+        binding.githubLoginButton.setOnClickListener(this)
+
+        resultLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+                try {
+                    val account = task.getResult(ApiException::class.java)
+                    googleAuthFirFirebase(account.idToken!!)
+                } catch (e: ApiException) {
+                    Log.e("LoginActivity", e.message.toString())
+                }
+            }
+    }
+
+    override fun onClick(view: View?) {
+        when (view!!.id) {
+            R.id.btnLogin -> {
+                loginUser()
+            }
+            R.id.googleLoginButton -> {
+                googleSignIn()
+            }
+            R.id.txtRegister -> {
+                val intent = Intent(this, RegisterActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.githubLoginButton -> {
+                val intent = Intent(this, GithubAuthActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
@@ -76,9 +96,8 @@ class LoginActivity : AppCompatActivity() {
         binding.txtRegister.text = mSpannableString
     }
 
-    //  Add Google Authentication
-    private fun googleSignINMethod() {
-        // Adding google sign in method in App
+    // Google Authentication
+    private fun googleSignIn() {
         val gso = GoogleSignInOptions
             .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.web_client_id))
@@ -90,24 +109,13 @@ class LoginActivity : AppCompatActivity() {
 
         //  intent through google signIn button
         googleSignInClient.signInIntent.also {
-            startActivityForResult(it, REQUEST_CODE_SIGN_IN)
-        }
-    }
-
-    //  override this function for get actual result
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_CODE_SIGN_IN) {
-            val account = GoogleSignIn.getSignedInAccountFromIntent(data).result
-            account?.let {
-                googleAuthFirFirebase(it)
-            }
+            resultLauncher.launch(it)
         }
     }
 
     //get credentials and perform authentications with Google
-    private fun googleAuthFirFirebase(account: GoogleSignInAccount) {
-        val credentials = GoogleAuthProvider.getCredential(account.idToken, null)
+    private fun googleAuthFirFirebase(idToken: String) {
+        val credentials = GoogleAuthProvider.getCredential(idToken, null)
         lifecycleScope.launch(Dispatchers.IO) {
             try {
                 firebaseAuth.signInWithCredential(credentials)
@@ -123,7 +131,6 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    //  check login already or not
     override fun onStart() {
         super.onStart()
         val currentUser = firebaseAuth.currentUser
@@ -134,7 +141,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    //  Create function for login user
+    //Login registered user using email and password
     private fun loginUser() {
         val email = binding.etLoginEmail.text.toString()
         val pass = binding.etLoginPass.text.toString()
@@ -148,7 +155,6 @@ class LoginActivity : AppCompatActivity() {
 
         try {
             firebaseAuth.signInWithEmailAndPassword(email, pass).addOnSuccessListener {
-
                 val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                 startActivity(intent)
                 finish()
@@ -156,11 +162,11 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
             }
         } catch (e: Exception) {
-            Toast.makeText(this@LoginActivity, "Please Fill Credentials", Toast.LENGTH_LONG).show()
+            Toast.makeText(this@LoginActivity, e.message, Toast.LENGTH_LONG).show()
         }
     }
 
-    //  used for show errors on edittext when empty
+    //  used show errors on edittext when empty
     private fun setErrors(view: EditText, error: String) {
         view.error = error
     }
