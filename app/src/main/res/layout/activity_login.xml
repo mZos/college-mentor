@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/dull_white"
     tools:context=".activity.LoginActivity">
 
@@ -39,46 +40,58 @@
         android:layout_marginBottom="15dp"
         android:textSize="18sp"/>
 
-    <EditText
-        android:id="@+id/etLoginEmail"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailContainer"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginStart="28dp"
+        android:layout_height="50dp"
+        android:background="@color/grey"
         android:hint="@string/email_address"
-        android:textSize="15sp"
-        android:inputType="textEmailAddress"
-        android:maxLength="25"
-        android:layout_below="@id/txtMSG1"
-        android:layout_centerHorizontal="true"
-        android:drawableStart="@drawable/ic_email"
-        android:drawablePadding="5dp"
-        android:textColorHint="@color/common_google_signin_btn_text_light_default"
-        android:background="@color/grey"/>
+        android:textColorHint="@color/black"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/txtMSG1">
 
-    <EditText
-        android:id="@+id/etLoginPass"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:inputType="textEmailAddress"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passContainer"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
+        android:layout_height="wrap_content"
+        android:background="@color/dull_white"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:counterTextColor="@color/black"
         android:hint="@string/password"
-        android:layout_marginEnd="28dp"
-        android:layout_marginStart="28dp"
-        android:textSize="15sp"
-        android:inputType="textPassword"
-        android:maxLength="16"
-        android:layout_below="@id/etLoginEmail"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="13dp"
-        android:drawableStart="@drawable/ic_password"
-        android:drawablePadding="5dp"
-        android:textColorHint="@color/common_google_signin_btn_text_light_default"
-        android:background="@color/grey"/>
+        android:textColorHint="@color/black"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/emailContainer">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:inputType="textPassword"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="42dp"
-        android:layout_below="@id/etLoginPass"
+        android:layout_below="@id/passContainer"
         android:text="Sign-In"
         android:textAllCaps="false"
         android:textColor="@color/black"

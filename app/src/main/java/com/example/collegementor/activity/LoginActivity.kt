@@ -7,6 +7,7 @@ import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.util.Log
+import android.util.Patterns
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -29,7 +30,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 const val REQUEST_CODE_SIGN_IN = 0
-class LoginActivity : AppCompatActivity(), View.OnClickListener {
+class LoginActivity : AppCompatActivity() ,View.OnClickListener{
 
     lateinit var binding: ActivityLoginBinding
     private lateinit var googleSignInClient: GoogleSignInClient
@@ -46,6 +47,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         //Design Register text
         changeColorTextView()
+
 
         binding.btnLogin.setOnClickListener(this)
         binding.googleLoginButton.setOnClickListener(this)
@@ -143,21 +145,16 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     //Login registered user using email and password
     private fun loginUser() {
-        val email = binding.etLoginEmail.text.toString().trim()
-        val pass = binding.etLoginPass.text.toString()
 
-        if (email.isEmpty()) {
-            setErrors(binding.etLoginEmail, "Please enter your email")
-        }
-        if (pass.isEmpty()) {
-            setErrors(binding.etLoginPass, "Please enter correct password")
-        }
+        val email = binding.emailEditText.text.toString()
+        val password = binding.passEditText.text.toString()
 
         try {
-            firebaseAuth.signInWithEmailAndPassword(email, pass).addOnSuccessListener {
+            firebaseAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
                 val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                 startActivity(intent)
                 finish()
+
             }.addOnFailureListener {
                 Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
             }
@@ -170,4 +167,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private fun setErrors(view: EditText, error: String) {
         view.error = error
     }
+
+
 }

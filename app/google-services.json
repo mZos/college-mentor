@@ -15,11 +15,27 @@
       },
       "oauth_client": [
         {
-          "client_id": "876325107894-tkl563a76vk84gm0lter78qkrpmn2d0t.apps.googleusercontent.com",
+          "client_id": "876325107894-77n9r3ourdvjlpn97s5p9cmh96h0dm46.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.collegementor",
             "certificate_hash": "0e505850d1c9eb8bd5d2b9dc803316e7f00e17c6"
+          }
+        },
+        {
+          "client_id": "876325107894-9sja5dje79us8p8820bd59smu95m6drt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.collegementor",
+            "certificate_hash": "59d405a4aa6ab17c8cdcb62dd0d691d6ac60db04"
+          }
+        },
+        {
+          "client_id": "876325107894-qlsmk81a3b3u97mjlau7dbgo5ucqfmd7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.collegementor",
+            "certificate_hash": "9f33c091899ea449afe7eb68d58631a250f59118"
           }
         },
         {
