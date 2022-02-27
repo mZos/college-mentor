@@ -6,10 +6,12 @@ import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.fragment.app.FragmentActivity
 import com.example.collegementor.R
 import com.example.collegementor.databinding.ActivityHomeBinding
 import com.example.collegementor.firebase.Firebase.mAuth
 import com.example.collegementor.fragment.*
+import com.example.collegementor.fragment.studyFragment.BTechBranchFragment
 import com.example.collegementor.fragment.studyFragment.StudyFragment
 import com.google.firebase.auth.FirebaseAuth
 
@@ -59,7 +61,7 @@ class HomeActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, StudyFragment())
                         .commit()
-                    supportActionBar?.title = "Study"
+                    supportActionBar?.title = "Select Course"
                     binding.drawerLayout.closeDrawers()
                 }
 //                Placements Menu clicks
@@ -83,7 +85,7 @@ class HomeActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, LanguageFragment())
                         .commit()
-                    supportActionBar?.title = "Pragramming Languages"
+                    supportActionBar?.title = "Programming Languages"
                     binding.drawerLayout.closeDrawers()
                 }
 //                Adding clicks on ExtraSkills
@@ -120,7 +122,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     //    OpenHomeFunction
-    public fun openHomeFragment() {
+    private fun openHomeFragment() {
         val fragment = HomeFragment()
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame, fragment)
@@ -151,6 +153,10 @@ class HomeActivity : AppCompatActivity() {
     override fun onBackPressed() {
         val frag = supportFragmentManager.findFragmentById(R.id.frame)
         when (frag) {
+            is BTechBranchFragment -> {
+                supportFragmentManager.popBackStack()
+                supportActionBar?.title = "Select Course"
+            }
             !is HomeFragment -> openHomeFragment()
             else -> super.onBackPressed()
         }

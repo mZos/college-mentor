@@ -6,7 +6,7 @@
     android:id="@+id/btech_content">
 
     <TextView
-        android:id="@+id/txtStudyTopics"
+        android:id="@+id/txtBranchName"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_below="@id/txtStudyTopics"
+        android:layout_below="@id/txtBranchName"
         android:background="@color/grey"/>
 
 </RelativeLayout>
