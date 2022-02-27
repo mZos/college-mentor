@@ -10,6 +10,7 @@ import com.example.collegementor.R
 import com.example.collegementor.databinding.ActivityHomeBinding
 import com.example.collegementor.firebase.Firebase.mAuth
 import com.example.collegementor.fragment.*
+import com.example.collegementor.fragment.studyFragment.StudyFragment
 import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity() {
