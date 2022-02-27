@@ -7,7 +7,6 @@ import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.util.Log
-import android.util.Patterns
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -47,7 +46,6 @@ class LoginActivity : AppCompatActivity() ,View.OnClickListener{
 
         //Design Register text
         changeColorTextView()
-
 
         binding.btnLogin.setOnClickListener(this)
         binding.googleLoginButton.setOnClickListener(this)
