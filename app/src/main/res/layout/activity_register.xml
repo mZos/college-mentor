@@ -40,124 +40,159 @@
         android:layout_marginBottom="17dp"
         android:textSize="18sp"/>
 
-    <EditText
-        android:id="@+id/etRegisterName"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameContainer"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginStart="28dp"
-        android:hint="@string/name"
-        android:textSize="15sp"
-        android:inputType="text"
-        android:maxLength="25"
+        android:layout_height="50dp"
         android:layout_below="@id/txtMSG1"
-        android:layout_centerHorizontal="true"
-        android:drawableStart="@drawable/ic_person"
-        android:drawablePadding="5dp"
-        android:textColorHint="@color/common_google_signin_btn_text_light_default"
-        android:background="@color/grey"/>
+        android:textColorHint="@color/black"
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/grey"
+        android:layout_marginTop="5dp">
 
-    <EditText
-        android:id="@+id/etRegisterCollege"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name"
+            android:background="@color/grey"
+            app:hintTextColor="@color/black"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:lines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/collegeContainer"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginStart="28dp"
-        android:hint="@string/institution_name"
-        android:textSize="15sp"
+        android:layout_height="50dp"
+        android:background="@color/grey"
+        android:textColorHint="@color/black"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
-        android:inputType="text"
-        android:maxLength="254"
-        android:layout_below="@id/etRegisterName"
-        android:layout_centerHorizontal="true"
-        android:drawableStart="@drawable/ic_college"
-        android:drawablePadding="5dp"
-        android:textColorHint="@color/common_google_signin_btn_text_light_default"
-        android:background="@color/grey"/>
+        android:layout_below="@id/nameContainer">
 
-    <EditText
-        android:id="@+id/etRegisterCourse"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/collegeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:hint="@string/institution_name"
+            android:lines="2"
+            android:textColor="@color/black"
+            android:inputType="text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/courseContainer"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginStart="28dp"
-        android:hint="@string/bachler_of_engineering_course"
-        android:textSize="15sp"
+        android:layout_height="50dp"
+        android:background="@color/grey"
+        android:textColorHint="@color/black"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
-        android:inputType="text"
-        android:maxLength="25"
-        android:layout_below="@id/etRegisterCollege"
-        android:layout_centerHorizontal="true"
-        android:drawableStart="@drawable/ic_course"
-        android:drawablePadding="5dp"
-        android:textColorHint="@color/common_google_signin_btn_text_light_default"
-        android:background="@color/grey"/>
+        android:textColor="@color/black"
+        android:layout_below="@id/collegeContainer">
 
-    <EditText
-        android:id="@+id/etRegisterEmail"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/courseEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/course_name"
+            android:background="@color/grey"
+            android:lines="2"
+            android:textColor="@color/black"
+            android:inputType="text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailContainer"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginStart="28dp"
+        android:layout_height="50dp"
+        android:background="@color/grey"
         android:hint="@string/email_address"
-        android:textSize="15sp"
+        android:textColorHint="@color/black"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
-        android:inputType="textEmailAddress"
-        android:maxLength="25"
-        android:layout_below="@id/etRegisterCourse"
-        android:layout_centerHorizontal="true"
-        android:drawableStart="@drawable/ic_email"
-        android:drawablePadding="5dp"
-        android:textColorHint="@color/common_google_signin_btn_text_light_default"
-        android:background="@color/grey"/>
+        android:layout_below="@id/courseContainer">
 
-    <EditText
-        android:id="@+id/etRegisterPass"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:inputType="textEmailAddress"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passContainer"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginStart="28dp"
+        android:layout_height="wrap_content"
+        android:background="@color/dull_white"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:counterTextColor="@color/black"
         android:hint="@string/password"
-        android:textSize="15sp"
+        android:textColorHint="@color/black"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
-        android:inputType="textPassword"
-        android:maxLength="25"
-        android:layout_below="@id/etRegisterEmail"
-        android:layout_centerHorizontal="true"
-        android:drawableStart="@drawable/ic_password"
-        android:drawablePadding="7dp"
-        android:textColorHint="@color/common_google_signin_btn_text_light_default"
-        android:background="@color/grey"/>
+        android:layout_below="@id/emailContainer">
 
-    <EditText
-        android:id="@+id/etRegisterConfirmPass"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:inputType="textPassword"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmContainer"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginStart="28dp"
+        android:layout_height="wrap_content"
+        android:background="@color/dull_white"
+        app:counterEnabled="true"
+        app:counterTextColor="@color/black"
+        app:counterMaxLength="16"
         android:hint="@string/confirm_password"
-        android:textSize="15sp"
-        android:layout_marginTop="10dp"
-        android:inputType="textPassword"
-        android:maxLength="25"
-        android:layout_below="@id/etRegisterPass"
-        android:layout_centerHorizontal="true"
-        android:drawableStart="@drawable/ic_password"
-        android:drawablePadding="7dp"
-        android:textColorHint="@color/common_google_signin_btn_text_light_default"
-        android:background="@color/grey"/>
+        android:textColorHint="@color/black"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/passContainer">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:inputType="textPassword"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="42dp"
-        android:layout_below="@id/etRegisterConfirmPass"
+        android:layout_below="@id/confirmContainer"
         android:text="@string/sign_up"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="28dp"
-        android:background="@color/green"
+        android:background="@color/dull_white"
         android:layout_marginStart="28dp"/>
 
 
@@ -167,8 +202,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
         android:text="I'm already a member ! Sign-In"
-        android:textColor="@color/black"
-        android:layout_marginBottom="20dp"/>
+        android:textColor="@color/black" />
 
 </RelativeLayout>

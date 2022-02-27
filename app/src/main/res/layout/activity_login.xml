@@ -65,7 +65,7 @@
         android:layout_marginStart="28dp"
         android:textSize="15sp"
         android:inputType="textPassword"
-        android:maxLength="8"
+        android:maxLength="16"
         android:layout_below="@id/etLoginEmail"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="13dp"

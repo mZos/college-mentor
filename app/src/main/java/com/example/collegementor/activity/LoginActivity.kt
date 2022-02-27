@@ -34,7 +34,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var binding: ActivityLoginBinding
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
-
     private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -131,6 +130,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+
     override fun onStart() {
         super.onStart()
         val currentUser = firebaseAuth.currentUser
@@ -143,7 +143,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     //Login registered user using email and password
     private fun loginUser() {
-        val email = binding.etLoginEmail.text.toString()
+        val email = binding.etLoginEmail.text.toString().trim()
         val pass = binding.etLoginPass.text.toString()
 
         if (email.isEmpty()) {

@@ -65,6 +65,7 @@
     <string name="sign_in_to_conitnue">Sign-In to Conitnue!</string>
     <string name="github_login">Github Login</string>
     <string name="sign_in_with_github">Sign In With Github:</string>
+    <string name="course_name">Course name</string>
 
 
 </resources>
