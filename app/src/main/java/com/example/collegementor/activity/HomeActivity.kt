@@ -6,13 +6,12 @@ import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.fragment.app.FragmentActivity
 import com.example.collegementor.R
 import com.example.collegementor.databinding.ActivityHomeBinding
 import com.example.collegementor.firebase.Firebase.mAuth
 import com.example.collegementor.fragment.*
-import com.example.collegementor.fragment.studyFragment.BTechBranchFragment
-import com.example.collegementor.fragment.studyFragment.StudyFragment
+import com.example.collegementor.fragment.studyfragment.BTechBranchFragment
+import com.example.collegementor.fragment.studyfragment.StudyFragment
 import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity() {

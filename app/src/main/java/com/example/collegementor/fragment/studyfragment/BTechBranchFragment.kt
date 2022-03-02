@@ -1,9 +1,11 @@
-package com.example.collegementor.fragment.studyFragment
+package com.example.collegementor.fragment.studyfragment
 
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.collegementor.R
 import com.example.collegementor.adapter.BTechBranchRecyclerAdapter
 import com.example.collegementor.databinding.FragmentBtechBranchBinding
 import com.example.collegementor.fragment.basefragment.BaseFragment
@@ -24,7 +26,11 @@ class BTechBranchFragment : BaseFragment<FragmentBtechBranchBinding>(
         val onBranchClickListener = BTechBranchRecyclerAdapter.OnClickListener { position ->
             when (branchList[position]) {
                 " CSE" -> {
-                    toast("${branchList[position]} notes coming soon")
+                    requireActivity().supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame, BranchYearFragment())
+                        .addToBackStack(null)
+                        .commit()
+                    (activity as AppCompatActivity).supportActionBar?.title = "Select Year"
                 }
                 " ECE" -> {
                     toast("${branchList[position]} notes coming soon")

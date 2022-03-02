@@ -1,4 +1,4 @@
-package com.example.collegementor.fragment.studyFragment
+package com.example.collegementor.fragment.studyfragment
 
 import android.content.Context
 import android.os.Bundle
