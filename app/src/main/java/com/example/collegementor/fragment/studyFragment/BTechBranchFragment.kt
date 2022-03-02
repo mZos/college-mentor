@@ -3,15 +3,14 @@ package com.example.collegementor.fragment.studyFragment
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.collegementor.R
 import com.example.collegementor.adapter.BTechBranchRecyclerAdapter
 import com.example.collegementor.databinding.FragmentBtechBranchBinding
+import com.example.collegementor.fragment.basefragment.BaseFragment
 
-class BTechBranchFragment : Fragment(R.layout.fragment_btech_branch) {
-
-    private lateinit var binding: FragmentBtechBranchBinding
+class BTechBranchFragment : BaseFragment<FragmentBtechBranchBinding>(
+    FragmentBtechBranchBinding::inflate
+) {
     private val branchList = arrayListOf(
         " CSE",
         " ECE",
@@ -22,10 +21,8 @@ class BTechBranchFragment : Fragment(R.layout.fragment_btech_branch) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentBtechBranchBinding.bind(view)
-
         val onBranchClickListener = BTechBranchRecyclerAdapter.OnClickListener { position ->
-            when(branchList[position]) {
+            when (branchList[position]) {
                 " CSE" -> {
                     toast("${branchList[position]} notes coming soon")
                 }

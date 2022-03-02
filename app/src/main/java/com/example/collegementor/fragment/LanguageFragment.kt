@@ -1,28 +1,20 @@
 package com.example.collegementor.fragment
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.collegementor.R
 import com.example.collegementor.adapter.LanguageRecyclerAdapter
+import com.example.collegementor.databinding.FragmentLanguageBinding
+import com.example.collegementor.fragment.basefragment.BaseFragment
 import com.example.collegementor.languageActivity.LanguageActivity
 
-class LanguageFragment : Fragment(),LanguageRecyclerAdapter.OnLanguageClickListener  {
+class LanguageFragment : BaseFragment<FragmentLanguageBinding>(
+    FragmentLanguageBinding::inflate
+), LanguageRecyclerAdapter.OnLanguageClickListener {
 
-    lateinit var recyclerLanguage:RecyclerView
-    lateinit var layoutManager: RecyclerView.LayoutManager
-    lateinit var recyclerAdapter:LanguageRecyclerAdapter
-    lateinit var bundle: Bundle
-
-    val languageList = arrayListOf<String>(
+    val languageList = arrayListOf(
         "  Learn Python",
         "  Learn Java",
         "  Learn C++",
@@ -30,34 +22,22 @@ class LanguageFragment : Fragment(),LanguageRecyclerAdapter.OnLanguageClickListe
         "  Learn C",
         "  Learn SQL",
         "  Learn R"
-        )
+    )
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_language,container,false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        recyclerLanguage = view.findViewById(R.id.recyclerLanguage)
-        layoutManager = LinearLayoutManager(activity)
-
-//        Added Divider b/w items
-        recyclerLanguage.addItemDecoration(
-            DividerItemDecoration(
-                recyclerLanguage.context,(layoutManager as LinearLayoutManager).orientation
-            )
-        )
-        recyclerAdapter = LanguageRecyclerAdapter(activity as Context,languageList,this)
-        recyclerLanguage.adapter = recyclerAdapter
-        recyclerLanguage.layoutManager = layoutManager
-        return view
+        binding.recyclerLanguage.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = LanguageRecyclerAdapter(requireContext(), languageList, this@LanguageFragment)
+        }
     }
 
     override fun onLanguageClick(position: Int) {
-        Toast.makeText(context,"item $position",Toast.LENGTH_LONG).show()
-        activity?.let{
-            val intent = Intent (it, LanguageActivity::class.java)
-            intent.putExtra("position" , position)
+        Toast.makeText(context, "item $position", Toast.LENGTH_LONG).show()
+        activity?.let {
+            val intent = Intent(it, LanguageActivity::class.java)
+            intent.putExtra("position", position)
             it.startActivity(intent)
         }
     }

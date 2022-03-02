@@ -5,17 +5,15 @@ import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.view.View
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import com.example.collegementor.R
 import com.example.collegementor.databinding.FragmentAboutBinding
+import com.example.collegementor.fragment.basefragment.BaseFragment
 
-class AboutFragment : Fragment(R.layout.fragment_about) {
-
-    private lateinit var binding: FragmentAboutBinding
-
+class AboutFragment : BaseFragment<FragmentAboutBinding>(
+    FragmentAboutBinding::inflate
+) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentAboutBinding.bind(view)
 
         binding.txtAboutZakariya.movementMethod = LinkMovementMethod.getInstance()
         binding.txtAboutMasoom.movementMethod = LinkMovementMethod.getInstance()

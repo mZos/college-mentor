@@ -1,11 +1,13 @@
-package com.example.collegementor.fragment
+package com.example.collegementor.fragment.studyFragment
 
 import android.os.Bundle
 import android.view.View
-import com.example.collegementor.databinding.FragmentHomeBinding
+import com.example.collegementor.databinding.FragmentBranchYearBinding
 import com.example.collegementor.fragment.basefragment.BaseFragment
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
+class BranchYearFragment: BaseFragment<FragmentBranchYearBinding>(
+    FragmentBranchYearBinding::inflate
+) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
