@@ -5,7 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegementor.databinding.RecyclerBtechBranchSingleItemBinding
 
-class BTechBranchRecyclerAdapter(private val itemList: ArrayList<String>) :
+class BTechBranchRecyclerAdapter(
+    private val itemList: ArrayList<String>,
+    private val onClickListener: OnClickListener
+) :
     RecyclerView.Adapter<BTechBranchRecyclerAdapter.BTechViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BTechViewHolder {
@@ -21,10 +24,19 @@ class BTechBranchRecyclerAdapter(private val itemList: ArrayList<String>) :
         val branch = itemList[position]
 
         holder.binding.txtBranchName.text = branch
+        holder.binding.rlBranchLayout.setOnClickListener {
+            onClickListener.onClick(position)
+        }
+
+
     }
 
     override fun getItemCount(): Int = itemList.size
 
     class BTechViewHolder(val binding: RecyclerBtechBranchSingleItemBinding) :
         RecyclerView.ViewHolder(binding.root)
+
+    class OnClickListener(val clickListener: (itemPosition: Int) -> Unit) {
+        fun onClick(itemPosition: Int) = clickListener(itemPosition)
+    }
 }
