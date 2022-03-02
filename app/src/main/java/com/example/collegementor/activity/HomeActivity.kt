@@ -11,6 +11,7 @@ import com.example.collegementor.databinding.ActivityHomeBinding
 import com.example.collegementor.firebase.Firebase.mAuth
 import com.example.collegementor.fragment.*
 import com.example.collegementor.fragment.studyfragment.BTechBranchFragment
+import com.example.collegementor.fragment.studyfragment.BranchYearFragment
 import com.example.collegementor.fragment.studyfragment.StudyFragment
 import com.google.firebase.auth.FirebaseAuth
 
@@ -155,6 +156,10 @@ class HomeActivity : AppCompatActivity() {
             is BTechBranchFragment -> {
                 supportFragmentManager.popBackStack()
                 supportActionBar?.title = "Select Course"
+            }
+            is BranchYearFragment -> {
+                supportFragmentManager.popBackStack()
+                supportActionBar?.title = "Select Branch"
             }
             !is HomeFragment -> openHomeFragment()
             else -> super.onBackPressed()
