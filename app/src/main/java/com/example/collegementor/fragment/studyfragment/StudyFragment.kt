@@ -1,25 +1,18 @@
 package com.example.collegementor.fragment.studyfragment
 
-import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.collegementor.R
 import com.example.collegementor.adapter.StudyRecyclerAdapter
+import com.example.collegementor.databinding.FragmentStudyBinding
+import com.example.collegementor.fragment.basefragment.BaseFragment
 
-class StudyFragment : Fragment() {
+class StudyFragment : BaseFragment<FragmentStudyBinding>(FragmentStudyBinding::inflate) {
 
-    lateinit var recyclerStudy: RecyclerView
-    lateinit var layoutManager: RecyclerView.LayoutManager
-    lateinit var recyclerAdapter: StudyRecyclerAdapter
-
-    val studyTopicList = arrayListOf<String>(
+    val studyTopicList = arrayListOf(
         "  B.Tech",
         "  B.Pharma",
         "  Diploma",
@@ -28,18 +21,10 @@ class StudyFragment : Fragment() {
         "  BBA"
     )
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_study, container, false)
-
-        recyclerStudy = view.findViewById(R.id.recyclerStudy)
-        layoutManager = LinearLayoutManager(activity)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val recyclerItemClickListener = StudyRecyclerAdapter.OnClickListener { itemPosition ->
-
             when (studyTopicList[itemPosition]) {
                 "  B.Tech" -> {
                     requireActivity().supportFragmentManager.beginTransaction()
@@ -85,12 +70,13 @@ class StudyFragment : Fragment() {
                 }
             }
         }
-
-        recyclerAdapter =
-            StudyRecyclerAdapter(activity as Context, studyTopicList, recyclerItemClickListener)
-        recyclerStudy.adapter = recyclerAdapter
-        recyclerStudy.layoutManager = layoutManager
-
-        return view
+        binding.recyclerStudy.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = StudyRecyclerAdapter(
+                requireContext(),
+                studyTopicList,
+                recyclerItemClickListener
+            )
+        }
     }
 }
