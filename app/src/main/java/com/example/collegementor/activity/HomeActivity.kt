@@ -13,6 +13,7 @@ import com.example.collegementor.fragment.*
 import com.example.collegementor.fragment.studyfragment.BTechBranchFragment
 import com.example.collegementor.fragment.studyfragment.BranchYearFragment
 import com.example.collegementor.fragment.studyfragment.StudyFragment
+import com.example.collegementor.fragment.studyfragment.SubjectFragment
 import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity() {
@@ -151,8 +152,7 @@ class HomeActivity : AppCompatActivity() {
 
     //    Added backPressFunctionality
     override fun onBackPressed() {
-        val frag = supportFragmentManager.findFragmentById(R.id.frame)
-        when (frag) {
+        when (supportFragmentManager.findFragmentById(R.id.frame)) {
             is BTechBranchFragment -> {
                 supportFragmentManager.popBackStack()
                 supportActionBar?.title = "Select Course"
@@ -160,6 +160,10 @@ class HomeActivity : AppCompatActivity() {
             is BranchYearFragment -> {
                 supportFragmentManager.popBackStack()
                 supportActionBar?.title = "Select Branch"
+            }
+            is SubjectFragment -> {
+                supportFragmentManager.popBackStack()
+                supportActionBar?.title = "Select Year"
             }
             !is HomeFragment -> openHomeFragment()
             else -> super.onBackPressed()
