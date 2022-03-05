@@ -38,9 +38,9 @@ android {
 
 dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     testImplementation 'junit:junit:'
@@ -55,7 +55,7 @@ dependencies {
     //Firebase google sign in
     implementation 'com.google.firebase:firebase-common-ktx'
     implementation 'com.google.firebase:firebase-auth-ktx'
-    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+    implementation 'com.google.android.gms:play-services-auth:20.1.0'
 
     //Firebase facebook login
     implementation 'com.facebook.android:facebook-android-sdk:12.1.0'
@@ -65,5 +65,5 @@ dependencies {
 
     //coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
 }
