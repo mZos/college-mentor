@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/layout">
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/txtName"
-        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="25dp"
+        android:layout_marginTop="5dp"
         android:paddingLeft="5dp"
+        android:paddingTop="25dp"
         android:paddingRight="5dp"
         android:paddingBottom="25dp"
         android:text="Demo String"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
         app:drawableEndCompat="@drawable/ic_right_arrow"
         app:drawableStartCompat="@drawable/ic_dash" />
 
-    <View
+    <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_below="@id/txtName"
-        android:background="@color/grey"/>
-
-
-
-</RelativeLayout>
+        android:layout_height="wrap_content"
+        app:dividerColor="@color/grey"
+        app:dividerInsetStart="40dp" />
+</LinearLayout>

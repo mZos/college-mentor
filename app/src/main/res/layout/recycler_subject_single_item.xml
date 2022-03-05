@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rlBranchYearlayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/txtSubjectName"
@@ -22,10 +23,9 @@
         app:drawableEndCompat="@drawable/ic_expand_more"
         app:drawableStartCompat="@drawable/ic_dash" />
 
-    <View
+    <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_below="@id/txtSubjectName"
-        android:background="@color/grey" />
-
-</RelativeLayout>
+        android:layout_height="wrap_content"
+        app:dividerColor="@color/grey"
+        app:dividerInsetStart="40dp" />
+</LinearLayout>

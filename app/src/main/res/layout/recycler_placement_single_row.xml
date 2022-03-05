@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/placementLayout"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
@@ -21,10 +22,9 @@
         app:drawableEndCompat="@drawable/ic_right_arrow"
         app:drawableStartCompat="@drawable/ic_dash" />
 
-    <View
+    <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_below="@id/txtPlacementTopic"
-        android:background="@color/grey"/>
-
-</RelativeLayout>
+        android:layout_height="wrap_content"
+        app:dividerInsetStart="40dp"
+        app:dividerColor="@color/grey"/>
+</LinearLayout>
