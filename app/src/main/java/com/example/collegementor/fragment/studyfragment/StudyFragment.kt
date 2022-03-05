@@ -73,7 +73,6 @@ class StudyFragment : BaseFragment<FragmentStudyBinding>(FragmentStudyBinding::i
         binding.recyclerStudy.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = StudyRecyclerAdapter(
-                requireContext(),
                 studyTopicList,
                 recyclerItemClickListener
             )

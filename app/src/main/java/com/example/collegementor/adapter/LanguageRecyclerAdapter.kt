@@ -2,53 +2,41 @@ package com.example.collegementor.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.RelativeLayout
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.collegementor.R
+import com.example.collegementor.databinding.RecyclerLanguageSingleRowBinding
 
 class LanguageRecyclerAdapter(
-
     val context: Context,
     private val itemList: ArrayList<String>,
-    val listener : OnLanguageClickListener
+    val listener: OnLanguageClickListener
+) : RecyclerView.Adapter<LanguageRecyclerAdapter.LanguageViewHolder>() {
 
-    ): RecyclerView.Adapter<LanguageRecyclerAdapter.LanguageViewHolder>() {
-
-    inner class LanguageViewHolder(view: View):RecyclerView.ViewHolder(view),View.OnClickListener{
-        val txtName :TextView = view.findViewById(R.id.txtName)
-        val layout :RelativeLayout = view.findViewById(R.id.layout)
-
-        init {
-            view.setOnClickListener(this)
-        }
-
-        override fun onClick(v: View?) {
-            val position:Int = adapterPosition
-            if (position != RecyclerView.NO_POSITION) {
-                listener.onLanguageClick(position)
-            }
-        }
-    }
+    inner class LanguageViewHolder(val binding: RecyclerLanguageSingleRowBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LanguageViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_language_single_row,parent,false)
-        return LanguageViewHolder(view)
+        val binding = RecyclerLanguageSingleRowBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return LanguageViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: LanguageViewHolder, position: Int) {
         val text = itemList[position]
-        holder.txtName.text = text
+        holder.binding.txtName.text = text
+        holder.binding.layout.setOnClickListener {
+            listener.onLanguageClick(position)
+        }
     }
 
     override fun getItemCount(): Int {
         return itemList.size
     }
 
-    interface OnLanguageClickListener{
+    interface OnLanguageClickListener {
         fun onLanguageClick(position: Int)
     }
-
 }
