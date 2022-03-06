@@ -1,12 +1,17 @@
 package com.example.collegementor.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegementor.databinding.RecyclerSubjectSingleItemBinding
+import com.example.collegementor.modal.Subject
 
 class SubjectRecyclerAdapter(
-    private val subjectNameList: ArrayList<String>
+    private val context: Context,
+    private val subjectFileList: ArrayList<Subject>
 ) : RecyclerView.Adapter<SubjectRecyclerAdapter.SubjectViewHolder>() {
 
 
@@ -21,12 +26,26 @@ class SubjectRecyclerAdapter(
     }
 
     override fun getItemCount(): Int {
-        return subjectNameList.size
+        return subjectFileList.size
     }
 
     override fun onBindViewHolder(holder: SubjectViewHolder, position: Int) {
-        val subjectName = subjectNameList[position]
-        holder.binding.txtSubjectName.text = subjectName
+        val subjectFile = subjectFileList[position]
+
+        val isExpanded = subjectFile.isExpanded
+
+        holder.binding.llSubItems.visibility = if (isExpanded) View.VISIBLE else View.GONE
+        holder.binding.txtSubjectName.text = subjectFile.subjectName
+        holder.binding.txtFileName.text = subjectFile.fileName
+
+        holder.binding.rlBranchYearlayout.setOnClickListener {
+            subjectFile.isExpanded = !isExpanded
+            notifyItemChanged(position)
+        }
+
+        holder.binding.llSubItems.setOnClickListener {
+            Toast.makeText(context, "Hellooooooo", Toast.LENGTH_SHORT).show()
+        }
     }
 
     class SubjectViewHolder(val binding: RecyclerSubjectSingleItemBinding) :
