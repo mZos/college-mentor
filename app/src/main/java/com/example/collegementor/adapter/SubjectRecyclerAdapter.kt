@@ -4,16 +4,16 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegementor.databinding.RecyclerSubjectSingleItemBinding
-import com.example.collegementor.modal.Subject
+import com.example.collegementor.modal.BTech
 
 class SubjectRecyclerAdapter(
     private val context: Context,
-    private val subjectFileList: ArrayList<Subject>
-) : RecyclerView.Adapter<SubjectRecyclerAdapter.SubjectViewHolder>() {
+    private val subjectFileList: List<BTech>,
 
+    ) : RecyclerView.Adapter<SubjectRecyclerAdapter.SubjectViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubjectViewHolder {
         val binding = RecyclerSubjectSingleItemBinding.inflate(
@@ -21,7 +21,6 @@ class SubjectRecyclerAdapter(
             parent,
             false
         )
-
         return SubjectViewHolder(binding)
     }
 
@@ -30,21 +29,21 @@ class SubjectRecyclerAdapter(
     }
 
     override fun onBindViewHolder(holder: SubjectViewHolder, position: Int) {
-        val subjectFile = subjectFileList[position]
+        val btech = subjectFileList[position]
 
-        val isExpanded = subjectFile.isExpanded
+        val isExpanded = btech.isExpanded
 
         holder.binding.llSubItems.visibility = if (isExpanded) View.VISIBLE else View.GONE
-        holder.binding.txtSubjectName.text = subjectFile.subjectName
-        holder.binding.txtFileName.text = subjectFile.fileName
+        holder.binding.txtSubjectName.text = btech.subjectName
 
-        holder.binding.rlBranchYearlayout.setOnClickListener {
-            subjectFile.isExpanded = !isExpanded
-            notifyItemChanged(position)
+        holder.binding.rvNested.apply {
+            adapter = SubjectNestedItemAdapter(btech.fileName)
+            layoutManager = LinearLayoutManager(holder.itemView.context)
         }
 
-        holder.binding.llSubItems.setOnClickListener {
-            Toast.makeText(context, "Hellooooooo", Toast.LENGTH_SHORT).show()
+        holder.binding.rlBranchYearlayout.setOnClickListener {
+            btech.isExpanded = !isExpanded
+            notifyItemChanged(position)
         }
     }
 

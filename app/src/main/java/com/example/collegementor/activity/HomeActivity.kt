@@ -6,12 +6,11 @@ import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.fragment.app.FragmentManager
 import com.example.collegementor.R
 import com.example.collegementor.databinding.ActivityHomeBinding
 import com.example.collegementor.firebase.Firebase.mAuth
 import com.example.collegementor.fragment.*
-import com.example.collegementor.fragment.studyfragment.BTechBranchFragment
-import com.example.collegementor.fragment.studyfragment.BranchYearFragment
 import com.example.collegementor.fragment.studyfragment.StudyFragment
 import com.example.collegementor.fragment.studyfragment.SubjectFragment
 import com.google.firebase.auth.FirebaseAuth
@@ -54,11 +53,13 @@ class HomeActivity : AppCompatActivity() {
             when (it.itemId) {
 //                home menu clicks
                 R.id.home -> {
+                    clearBackStack()
                     openHomeFragment()
                     binding.drawerLayout.closeDrawers()
                 }
 //                Adding clicks on Study Menu
                 R.id.study -> {
+                    clearBackStack()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, StudyFragment())
                         .commit()
@@ -67,6 +68,7 @@ class HomeActivity : AppCompatActivity() {
                 }
 //                Placements Menu clicks
                 R.id.placments -> {
+                    clearBackStack()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, PlacementFragment())
                         .commit()
@@ -75,6 +77,7 @@ class HomeActivity : AppCompatActivity() {
                 }
 //              Roadmaps Menu Clicks
                 R.id.roadmaps -> {
+                    clearBackStack()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, RoadmapFragment())
                         .commit()
@@ -83,6 +86,7 @@ class HomeActivity : AppCompatActivity() {
                 }
 //                Programming language Clicks
                 R.id.language -> {
+                    clearBackStack()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, LanguageFragment())
                         .commit()
@@ -91,6 +95,7 @@ class HomeActivity : AppCompatActivity() {
                 }
 //                Adding clicks on ExtraSkills
                 R.id.skills -> {
+                    clearBackStack()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, SkillsFragment())
                         .commit()
@@ -99,11 +104,13 @@ class HomeActivity : AppCompatActivity() {
                 }
 //                Adding clicks on interview
                 R.id.interview -> {
+                    clearBackStack()
                     supportActionBar?.title = "Skills"
                     binding.drawerLayout.closeDrawers()
                 }
 //              Adding clicks on About Menu
                 R.id.about -> {
+                    clearBackStack()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, AboutFragment())
                         .commit()
@@ -122,7 +129,37 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    //    OpenHomeFunction
+    //  setting up hamburger icon actions
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            binding.drawerLayout.openDrawer(GravityCompat.START)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onBackPressed() {
+        when (supportFragmentManager.findFragmentById(R.id.frame)) {
+            is StudyFragment-> {
+                if (supportActionBar?.title == "Select course"){
+                    clearBackStack()
+                    openHomeFragment()
+                }
+                supportFragmentManager.popBackStack()
+            }
+            is SubjectFragment -> {
+                supportFragmentManager.popBackStack()
+            }
+            !is HomeFragment -> {
+                clearBackStack()
+                openHomeFragment()
+            }
+            else -> {
+                clearBackStack()
+                super.onBackPressed()
+            }
+        }
+    }
+
     private fun openHomeFragment() {
         val fragment = HomeFragment()
         val transaction = supportFragmentManager.beginTransaction()
@@ -132,42 +169,15 @@ class HomeActivity : AppCompatActivity() {
         binding.navigationView.setCheckedItem(R.id.home)
     }
 
-    //  Creating an function for setting up toolbar with hamburger icon
+    private fun clearBackStack() {
+        supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+    }
+
+    //setting up toolbar with hamburger icon
     private fun setUpToolbar() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.title = "Home"
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
-
-    //  setting up hamburger icon actions
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-        if (id == android.R.id.home) {
-            binding.drawerLayout.openDrawer(GravityCompat.START)
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-
-    //    Added backPressFunctionality
-    override fun onBackPressed() {
-        when (supportFragmentManager.findFragmentById(R.id.frame)) {
-            is BTechBranchFragment -> {
-                supportFragmentManager.popBackStack()
-                supportActionBar?.title = "Select Course"
-            }
-            is BranchYearFragment -> {
-                supportFragmentManager.popBackStack()
-                supportActionBar?.title = "Select Branch"
-            }
-            is SubjectFragment -> {
-                supportFragmentManager.popBackStack()
-                supportActionBar?.title = "Select Year"
-            }
-            !is HomeFragment -> openHomeFragment()
-            else -> super.onBackPressed()
-        }
-
     }
 }

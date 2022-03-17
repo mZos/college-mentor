@@ -22,7 +22,7 @@ class StudyRecyclerAdapter(
 
     override fun onBindViewHolder(holder: StudyViewHolder, position: Int) {
         val text = itemList[position]
-        holder.binding.txtStudyTopics.text = text
+        holder.binding.txtTitle.text = text
         holder.binding.studyLayout.setOnClickListener {
             onClickListener.onClick(position)
         }

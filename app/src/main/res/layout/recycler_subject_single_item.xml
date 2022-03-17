@@ -30,21 +30,10 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txtFileName"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNested"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="15dp"
-            android:drawableStart="@drawable/ic_pdf"
-            android:drawablePadding="12dp"
-            android:paddingStart="45dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="0dp"
-            android:paddingBottom="10dp"
-            android:textColor="@color/dark_grey"
-            android:textSize="14sp"
-            tools:text="Cloud Computing" />
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <com.google.android.material.divider.MaterialDivider
