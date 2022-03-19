@@ -1,9 +1,11 @@
 package com.example.collegementor.fragment.studyfragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.collegementor.activity.PdfViewerActivity
 import com.example.collegementor.adapter.SubjectNestedItemAdapter
 import com.example.collegementor.adapter.SubjectRecyclerAdapter
 import com.example.collegementor.databinding.FragmentSubjectBinding
@@ -49,5 +51,9 @@ class SubjectFragment : BaseFragment<FragmentSubjectBinding>(FragmentSubjectBind
 
     override fun onFileClickListener(downloadLink: String) {
         Toast.makeText(requireContext(), downloadLink, Toast.LENGTH_SHORT).show()
+        Intent(requireActivity(), PdfViewerActivity::class.java).also {
+            it.putExtra("downloadLink", downloadLink)
+            startActivity(it)
+        }
     }
 }
