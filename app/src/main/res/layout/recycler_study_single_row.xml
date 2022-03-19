@@ -10,17 +10,18 @@
         android:id="@+id/txtTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:paddingLeft="5dp"
-        android:paddingTop="25dp"
-        android:paddingRight="5dp"
-        android:paddingBottom="25dp"
+        android:gravity="center_vertical"
         android:text="@string/demo_string"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         app:drawableEndCompat="@drawable/ic_right_arrow"
-        app:drawableStartCompat="@drawable/ic_dash" />
+        app:drawableStartCompat="@drawable/ic_folder"
+        android:drawablePadding="10dp"/>
 
     <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
