@@ -46,6 +46,13 @@ class SubjectRecyclerAdapter(
             btech.isExpanded = !isExpanded
             notifyItemChanged(position)
         }
+
+        holder.binding.txtSubjectName.setCompoundDrawablesWithIntrinsicBounds(
+            R.drawable.ic_dash,
+            0,
+            if (isExpanded) R.drawable.ic_expand_less else R.drawable.ic_expand_more,
+            0
+        )
     }
 
     class SubjectViewHolder(val binding: RecyclerSubjectSingleItemBinding) :
