@@ -16,6 +16,9 @@
         android:theme="@style/Theme.KipmNotes"
         tools:targetApi="n">
         <activity
+            android:name=".activity.PdfViewerActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.GithubAuthActivity"
             android:exported="false" />
         <activity
