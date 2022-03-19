@@ -6,14 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.collegementor.R
 import com.example.collegementor.databinding.RecyclerSubjectSingleItemBinding
 import com.example.collegementor.modal.BTech
 
 class SubjectRecyclerAdapter(
     private val context: Context,
     private val subjectFileList: List<BTech>,
-
-    ) : RecyclerView.Adapter<SubjectRecyclerAdapter.SubjectViewHolder>() {
+    private val onFileClickListener: SubjectNestedItemAdapter.OnSubjectFileClickListener
+) : RecyclerView.Adapter<SubjectRecyclerAdapter.SubjectViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubjectViewHolder {
         val binding = RecyclerSubjectSingleItemBinding.inflate(
@@ -37,7 +38,7 @@ class SubjectRecyclerAdapter(
         holder.binding.txtSubjectName.text = btech.subjectName
 
         holder.binding.rvNested.apply {
-            adapter = SubjectNestedItemAdapter(btech.fileName)
+            adapter = SubjectNestedItemAdapter(btech.notesFile, onFileClickListener)
             layoutManager = LinearLayoutManager(holder.itemView.context)
         }
 
