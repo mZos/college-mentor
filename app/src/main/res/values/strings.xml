@@ -66,6 +66,13 @@
     <string name="github_login">Github Login</string>
     <string name="sign_in_with_github">Sign In With Github:</string>
     <string name="course_name">Course name</string>
+    <string name="add_subjects">Add subjects</string>
+    <string name="retry">Retry</string>
+    <string name="enter_subject_name">"Enter Subject Name              "</string>
+    <string name="upload">Upload</string>
+    <string name="select_notes_file">select notes file</string>
+    <string name="enter_branch">Enter branch</string>
+    <string name="enter_year">Enter year</string>
 
 
 </resources>

@@ -3,6 +3,8 @@ package com.example.collegementor.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -30,6 +32,10 @@ class HomeActivity : AppCompatActivity() {
 
         openHomeFragment()
         setUpToolbar()
+
+        binding.fabAddNotes.setOnClickListener {
+            openDialog()
+        }
 
 //       make hamburger icon working
         val actionBarDrawerToggle = ActionBarDrawerToggle(
@@ -180,4 +186,11 @@ class HomeActivity : AppCompatActivity() {
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
+
+    private fun openDialog() {
+        val dialogFragment = FragmentCustomDialogAddSubjects()
+        dialogFragment.show(supportFragmentManager, "dialog")
+    }
+
+
 }

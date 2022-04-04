@@ -14,10 +14,11 @@ import com.example.collegementor.databinding.FragmentStudyBinding
 import com.example.collegementor.fragment.basefragment.BaseFragment
 import com.example.collegementor.utils.Constants.BRANCH_KEY
 import com.example.collegementor.utils.Constants.COURSE_KEY
+import com.example.collegementor.utils.Constants.YEAR_KEY
 
 class StudyFragment : BaseFragment<FragmentStudyBinding>(FragmentStudyBinding::inflate) {
 
-    val courseNameList = arrayListOf(
+    private val courseNameList = arrayListOf(
         "B.Tech",
         "B.Pharma",
         "Diploma",
@@ -90,23 +91,18 @@ class StudyFragment : BaseFragment<FragmentStudyBinding>(FragmentStudyBinding::i
         }
 
         val onYearClickListener = StudyRecyclerAdapter.OnClickListener { position ->
-            when (val year = yearList[position]) {
+            when (yearList[position]) {
                 "1st Year" -> {
-                    toast(year + "notes coming soon")
+                    openSubjectFragment("1")
                 }
                 "2nd Year" -> {
-                    toast(year + "notes coming soon")
+                    openSubjectFragment("2")
                 }
                 "3rd Year" -> {
-                    toast(year + "notes coming soon")
+                    openSubjectFragment("3")
                 }
                 "4th Year" -> {
-//                    toast(year + "notes coming soon")
-                    requireActivity().supportFragmentManager.beginTransaction()
-                        .addToBackStack(null)
-                        .replace(R.id.frame, SubjectFragment())
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                        .commit()
+                    openSubjectFragment("4")
                 }
             }
         }
@@ -169,6 +165,18 @@ class StudyFragment : BaseFragment<FragmentStudyBinding>(FragmentStudyBinding::i
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(R.id.frame, fragment)
             .addToBackStack(null)
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            .commit()
+    }
+
+    private fun openSubjectFragment(year:String) {
+        val bundle= Bundle()
+        bundle.putString(YEAR_KEY, year)
+        val subjectFragment = SubjectFragment()
+        subjectFragment.arguments = bundle
+        requireActivity().supportFragmentManager.beginTransaction()
+            .addToBackStack(null)
+            .replace(R.id.frame, subjectFragment)
             .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
             .commit()
     }

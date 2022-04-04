@@ -9,9 +9,14 @@ import com.example.collegementor.activity.PdfViewerActivity
 import com.example.collegementor.adapter.SubjectNestedItemAdapter
 import com.example.collegementor.adapter.SubjectRecyclerAdapter
 import com.example.collegementor.databinding.FragmentSubjectBinding
-import com.example.collegementor.firebase.Firebase.btechFirestoreRef
+import com.example.collegementor.firebase.Firebase.btechCs1FirestoreRef
+import com.example.collegementor.firebase.Firebase.btechCs2FirestoreRef
+import com.example.collegementor.firebase.Firebase.btechCs3FirestoreRef
+import com.example.collegementor.firebase.Firebase.btechCs4FirestoreRef
 import com.example.collegementor.fragment.basefragment.BaseFragment
 import com.example.collegementor.modal.BTech
+import com.example.collegementor.utils.Constants.YEAR_KEY
+import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.ktx.toObject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,26 +28,50 @@ class SubjectFragment : BaseFragment<FragmentSubjectBinding>(FragmentSubjectBind
     SubjectNestedItemAdapter.OnSubjectFileClickListener {
 
     private var subjectList = arrayListOf<BTech>()
+    private lateinit var year: String
+    private lateinit var firestoreRef: CollectionReference
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        retrieveBTechDB()
+        arguments?.let {
+            year = it.getString(YEAR_KEY, "")
+        }
+        when (year) {
+            "4" -> {
+                firestoreRef = btechCs4FirestoreRef
+            }
+            "3" -> {
+                firestoreRef = btechCs3FirestoreRef
+            }
+            "2" -> {
+                firestoreRef = btechCs2FirestoreRef
+            }
+            "1" -> {
+                firestoreRef = btechCs1FirestoreRef
+            }
+            else -> {
+
+            }
+        }
+
+        retrieveBTechDB(firestoreRef)
     }
 
-    private fun retrieveBTechDB() = CoroutineScope(Dispatchers.IO).launch {
-        try {
-            val snapshot = btechFirestoreRef.get().await()
-            snapshot.documents.forEach { data ->
-                val bTech = data.toObject<BTech>()
-                bTech?.let { subjectList.add(it) }
+    private fun retrieveBTechDB(firestoreRef: CollectionReference) =
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val snapshot = firestoreRef.get().await()
+                snapshot.documents.forEach { data ->
+                    val bTech = data.toObject<BTech>()
+                    bTech?.let { subjectList.add(it) }
+                }
+                withContext(Dispatchers.Main) {
+                    setUpRecyclerView()
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
-            withContext(Dispatchers.Main) {
-                setUpRecyclerView()
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
         }
-    }
 
     private fun setUpRecyclerView() = binding.rvSubjectName.apply {
         layoutManager = LinearLayoutManager(requireContext())
