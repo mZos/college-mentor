@@ -1,4 +1,4 @@
-package com.example.collegementor.languageActivity
+package com.example.collegementor.ui.languageActivity
 
 
 import androidx.appcompat.app.AppCompatActivity
@@ -30,14 +30,14 @@ class LanguageActivity : AppCompatActivity() {
 
             0 -> {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.languageFrame,PythonFragment())
+                    .replace(R.id.languageFrame, PythonFragment())
                     .commit()
                 supportActionBar?.title = "Learn Python"
             }
 
             2 -> {
                  supportFragmentManager.beginTransaction()
-                     .replace(R.id.languageFrame,CPPFragment())
+                     .replace(R.id.languageFrame, CPPFragment())
                      .commit()
                 supportActionBar?.title = "Learn C++"
             }

@@ -1,4 +1,4 @@
-package com.example.collegementor.fragment.studyfragment
+package com.example.collegementor.ui.fragment.studyfragment
 
 import android.os.Bundle
 import android.util.Log
@@ -8,10 +8,10 @@ import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.collegementor.R
-import com.example.collegementor.activity.HomeActivity
+import com.example.collegementor.ui.activity.HomeActivity
 import com.example.collegementor.adapter.StudyRecyclerAdapter
 import com.example.collegementor.databinding.FragmentStudyBinding
-import com.example.collegementor.fragment.basefragment.BaseFragment
+import com.example.collegementor.ui.fragment.basefragment.BaseFragment
 import com.example.collegementor.utils.Constants.BRANCH_KEY
 import com.example.collegementor.utils.Constants.COURSE_KEY
 import com.example.collegementor.utils.Constants.YEAR_KEY

@@ -1,4 +1,4 @@
-package com.example.collegementor.fragment
+package com.example.collegementor.ui.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.collegementor.R
 import com.example.collegementor.databinding.FragmentAboutBinding
-import com.example.collegementor.fragment.basefragment.BaseFragment
+import com.example.collegementor.ui.fragment.basefragment.BaseFragment
 
 class AboutFragment : BaseFragment<FragmentAboutBinding>(
     FragmentAboutBinding::inflate

@@ -1,4 +1,4 @@
-package com.example.collegementor.activity
+package com.example.collegementor.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,9 +12,9 @@ import androidx.fragment.app.FragmentManager
 import com.example.collegementor.R
 import com.example.collegementor.databinding.ActivityHomeBinding
 import com.example.collegementor.firebase.Firebase.mAuth
-import com.example.collegementor.fragment.*
-import com.example.collegementor.fragment.studyfragment.StudyFragment
-import com.example.collegementor.fragment.studyfragment.SubjectFragment
+import com.example.collegementor.ui.fragment.studyfragment.StudyFragment
+import com.example.collegementor.ui.fragment.studyfragment.SubjectFragment
+import com.example.collegementor.ui.fragment.*
 import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity() {
@@ -145,7 +145,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         when (supportFragmentManager.findFragmentById(R.id.frame)) {
-            is StudyFragment-> {
+            is StudyFragment -> {
                 if (supportActionBar?.title == "Select course"){
                     clearBackStack()
                     openHomeFragment()

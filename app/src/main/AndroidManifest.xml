@@ -5,7 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -17,28 +17,31 @@
         android:theme="@style/Theme.KipmNotes"
         tools:targetApi="n">
         <activity
-            android:name=".activity.PdfViewerActivity"
+            android:name=".WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.GithubAuthActivity"
+            android:name=".ui.activity.PdfViewerActivity"
             android:exported="false" />
         <activity
-            android:name=".languageActivity.LanguageActivity"
+            android:name=".ui.activity.GithubAuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.languageActivity.LanguageActivity"
             android:configChanges="orientation|screenSize"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.RegisterActivity"
+            android:name=".ui.activity.RegisterActivity"
             android:configChanges="orientation|screenSize"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".ui.activity.LoginActivity"
             android:configChanges="orientation|screenSize"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.SplashScreenActivity"
+            android:name=".ui.activity.SplashScreenActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait">
@@ -49,7 +52,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.HomeActivity"
+            android:name=".ui.activity.HomeActivity"
             android:configChanges="orientation|screenSize"
             android:exported="false"
             android:screenOrientation="portrait" />

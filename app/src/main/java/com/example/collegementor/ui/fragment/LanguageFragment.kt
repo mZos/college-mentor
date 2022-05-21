@@ -1,4 +1,4 @@
-package com.example.collegementor.fragment
+package com.example.collegementor.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +7,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.collegementor.adapter.LanguageRecyclerAdapter
 import com.example.collegementor.databinding.FragmentLanguageBinding
-import com.example.collegementor.fragment.basefragment.BaseFragment
-import com.example.collegementor.languageActivity.LanguageActivity
+import com.example.collegementor.ui.fragment.basefragment.BaseFragment
+import com.example.collegementor.ui.languageActivity.LanguageActivity
 
 class LanguageFragment : BaseFragment<FragmentLanguageBinding>(
     FragmentLanguageBinding::inflate

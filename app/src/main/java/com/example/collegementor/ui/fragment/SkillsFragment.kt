@@ -1,11 +1,11 @@
-package com.example.collegementor.fragment
+package com.example.collegementor.ui.fragment
 
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.collegementor.adapter.SkillRecyclerAdapter
 import com.example.collegementor.databinding.FragmentSkillsBinding
-import com.example.collegementor.fragment.basefragment.BaseFragment
+import com.example.collegementor.ui.fragment.basefragment.BaseFragment
 
 class SkillsFragment : BaseFragment<FragmentSkillsBinding>(FragmentSkillsBinding::inflate) {
     val skillsTopicList = arrayListOf(

@@ -1,4 +1,4 @@
-package com.example.collegementor.languageActivity
+package com.example.collegementor.ui.languageActivity
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

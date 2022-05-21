@@ -10,7 +10,7 @@ import com.example.collegementor.databinding.RecyclerRoadmapsSingleRowBinding
 class RoadmapRecyclerAdapter(val context: Context, private val itemList: ArrayList<String>) :
     RecyclerView.Adapter<RoadmapRecyclerAdapter.RoadmapViewHolder>() {
 
-    class RoadmapViewHolder(val binding: RecyclerRoadmapsSingleRowBinding) :
+    inner class RoadmapViewHolder(val binding: RecyclerRoadmapsSingleRowBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RoadmapViewHolder {

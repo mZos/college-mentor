@@ -1,4 +1,4 @@
-package com.example.collegementor.fragment.basefragment
+package com.example.collegementor.ui.fragment.basefragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

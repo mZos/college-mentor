@@ -1,4 +1,4 @@
-package com.example.collegementor.fragment
+package com.example.collegementor.ui.fragment
 
 import android.content.DialogInterface
 import android.content.Intent
@@ -18,6 +18,7 @@ import com.example.collegementor.firebase.Firebase.firestoreRef
 import com.example.collegementor.firebase.Firebase.storageRef
 
 class FragmentCustomDialogAddSubjects : DialogFragment(R.layout.dialog_add_subjects),
+
     View.OnClickListener {
 
     private lateinit var binding: DialogAddSubjectsBinding

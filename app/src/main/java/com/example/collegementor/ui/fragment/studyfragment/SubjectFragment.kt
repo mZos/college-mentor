@@ -1,11 +1,11 @@
-package com.example.collegementor.fragment.studyfragment
+package com.example.collegementor.ui.fragment.studyfragment
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.collegementor.activity.PdfViewerActivity
+import com.example.collegementor.ui.activity.PdfViewerActivity
 import com.example.collegementor.adapter.SubjectNestedItemAdapter
 import com.example.collegementor.adapter.SubjectRecyclerAdapter
 import com.example.collegementor.databinding.FragmentSubjectBinding
@@ -13,7 +13,7 @@ import com.example.collegementor.firebase.Firebase.btechCs1FirestoreRef
 import com.example.collegementor.firebase.Firebase.btechCs2FirestoreRef
 import com.example.collegementor.firebase.Firebase.btechCs3FirestoreRef
 import com.example.collegementor.firebase.Firebase.btechCs4FirestoreRef
-import com.example.collegementor.fragment.basefragment.BaseFragment
+import com.example.collegementor.ui.fragment.basefragment.BaseFragment
 import com.example.collegementor.modal.BTech
 import com.example.collegementor.utils.Constants.YEAR_KEY
 import com.google.firebase.firestore.CollectionReference

@@ -1,11 +1,11 @@
-package com.example.collegementor.fragment
+package com.example.collegementor.ui.fragment
 
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.collegementor.adapter.PlacementRecyclerAdapter
 import com.example.collegementor.databinding.FragmentPlacementBinding
-import com.example.collegementor.fragment.basefragment.BaseFragment
+import com.example.collegementor.ui.fragment.basefragment.BaseFragment
 
 class PlacementFragment : BaseFragment<FragmentPlacementBinding>(
     FragmentPlacementBinding::inflate

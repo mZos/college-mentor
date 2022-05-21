@@ -1,11 +1,11 @@
-package com.example.collegementor.fragment
+package com.example.collegementor.ui.fragment
 
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.collegementor.adapter.RoadmapRecyclerAdapter
 import com.example.collegementor.databinding.FragmentRoadmapBinding
-import com.example.collegementor.fragment.basefragment.BaseFragment
+import com.example.collegementor.ui.fragment.basefragment.BaseFragment
 
 class RoadmapFragment : BaseFragment<FragmentRoadmapBinding>(
     FragmentRoadmapBinding::inflate
@@ -20,9 +20,12 @@ class RoadmapFragment : BaseFragment<FragmentRoadmapBinding>(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.recyclerRoadmap.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = RoadmapRecyclerAdapter(requireContext(), roadmapTopicList)
         }
+
+
     }
 }

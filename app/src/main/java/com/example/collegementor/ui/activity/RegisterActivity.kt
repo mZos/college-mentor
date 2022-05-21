@@ -1,4 +1,4 @@
-package com.example.collegementor.activity
+package com.example.collegementor.ui.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent

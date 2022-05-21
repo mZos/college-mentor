@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dull_white"
-    tools:context=".languageActivity.LanguageActivity">
+    tools:context=".ui.languageActivity.LanguageActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

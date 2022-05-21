@@ -7,6 +7,12 @@
     android:orientation="vertical"
     android:padding="20dp">
 
+    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Your Notes Here:"
+        android:textColor="@color/black"/>
+
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/etBranch"
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.example.collegementor.activity
+package com.example.collegementor.ui.activity
 
 import android.content.Intent
 import android.graphics.Color
@@ -144,20 +144,23 @@ class LoginActivity : AppCompatActivity() ,View.OnClickListener{
     //Login registered user using email and password
     private fun loginUser() {
 
-        val email = binding.emailEditText.text.toString()
-        val password = binding.passEditText.text.toString()
-
-        try {
-            firebaseAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
-                val intent = Intent(this@LoginActivity, HomeActivity::class.java)
-                startActivity(intent)
-                finish()
-
-            }.addOnFailureListener {
-                Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
-            }
-        } catch (e: Exception) {
-            Toast.makeText(this@LoginActivity, e.message, Toast.LENGTH_LONG).show()
+//        val email = binding.emailEditText.text.toString()
+//        val password = binding.passEditText.text.toString()
+//
+//        try {
+//            firebaseAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
+//                val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+//                startActivity(intent)
+//                finish()
+//
+//            }.addOnFailureListener {
+//                Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+//            }
+//        } catch (e: Exception) {
+//            Toast.makeText(this@LoginActivity, e.message, Toast.LENGTH_LONG).show()
+//        }
+        Intent(this@LoginActivity, HomeActivity::class.java).also{
+            startActivity(it)
         }
     }
 

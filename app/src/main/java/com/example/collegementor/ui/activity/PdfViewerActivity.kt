@@ -1,4 +1,4 @@
-package com.example.collegementor.activity
+package com.example.collegementor.ui.activity
 
 import android.os.Bundle
 import android.view.View

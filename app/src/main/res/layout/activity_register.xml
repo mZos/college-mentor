@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dull_white"
-    tools:context=".activity.RegisterActivity">
+    tools:context=".ui.activity.RegisterActivity">
 
     <ImageView
         android:id="@+id/registerLogo"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/dull_white"
-    tools:context=".activity.GithubAuthActivity">
+    tools:context=".ui.activity.GithubAuthActivity">
 
     <ImageView
         android:layout_width="100dp"
