@@ -33,7 +33,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvNested"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            tools:itemCount="4"
+            tools:listitem="@layout/recycler_nested_subject_item"/>
     </LinearLayout>
 
     <com.google.android.material.divider.MaterialDivider

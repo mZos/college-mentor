@@ -7,7 +7,7 @@
     android:layout_marginBottom="15dp"
     android:orientation="vertical">
 
-    <com.google.android.material.textview.MaterialTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtFileName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +17,6 @@
         android:paddingTop="10dp"
         android:paddingEnd="0dp"
         android:paddingBottom="10dp"
-        android:textColor="@color/dark_grey"
+        android:textColor="@color/grey_3A3A3A"
         android:textSize="14sp" />
-
 </LinearLayout>
