@@ -3,8 +3,6 @@ package com.example.collegementor.ui.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -12,9 +10,9 @@ import androidx.fragment.app.FragmentManager
 import com.example.collegementor.R
 import com.example.collegementor.databinding.ActivityHomeBinding
 import com.example.collegementor.firebase.Firebase.mAuth
+import com.example.collegementor.ui.fragment.*
 import com.example.collegementor.ui.fragment.studyfragment.StudyFragment
 import com.example.collegementor.ui.fragment.studyfragment.SubjectFragment
-import com.example.collegementor.ui.fragment.*
 import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity() {
@@ -25,12 +23,11 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
 
         firebaseAuth = mAuth
 
-        openHomeFragment()
+        openStudyFragment()
         setUpToolbar()
 
         binding.fabAddNotes.setOnClickListener {
@@ -58,18 +55,15 @@ class HomeActivity : AppCompatActivity() {
 
             when (it.itemId) {
 //                home menu clicks
-                R.id.home -> {
-                    clearBackStack()
-                    openHomeFragment()
-                    binding.drawerLayout.closeDrawers()
-                }
+//                R.id.home -> {
+//                    clearBackStack()
+//                    openHomeFragment()
+//                    binding.drawerLayout.closeDrawers()
+//                }
 //                Adding clicks on Study Menu
                 R.id.study -> {
                     clearBackStack()
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.frame, StudyFragment())
-                        .commit()
-                    supportActionBar?.title = "Select Course"
+                    openStudyFragment()
                     binding.drawerLayout.closeDrawers()
                 }
 //                Placements Menu clicks
@@ -146,9 +140,9 @@ class HomeActivity : AppCompatActivity() {
     override fun onBackPressed() {
         when (supportFragmentManager.findFragmentById(R.id.frame)) {
             is StudyFragment -> {
-                if (supportActionBar?.title == "Select course"){
+                if (supportActionBar?.title == "Select course") {
                     clearBackStack()
-                    openHomeFragment()
+                    openStudyFragment()
                 }
                 supportFragmentManager.popBackStack()
             }
@@ -157,7 +151,7 @@ class HomeActivity : AppCompatActivity() {
             }
             !is HomeFragment -> {
                 clearBackStack()
-                openHomeFragment()
+                openStudyFragment()
             }
             else -> {
                 clearBackStack()
@@ -166,13 +160,13 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun openHomeFragment() {
-        val fragment = HomeFragment()
+    private fun openStudyFragment() {
+        val fragment = StudyFragment()
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame, fragment)
         transaction.commit()
-        supportActionBar?.title = "Home"
-        binding.navigationView.setCheckedItem(R.id.home)
+        supportActionBar?.title = "Select Course"
+        binding.navigationView.setCheckedItem(R.id.study)
     }
 
     private fun clearBackStack() {
@@ -182,7 +176,7 @@ class HomeActivity : AppCompatActivity() {
     //setting up toolbar with hamburger icon
     private fun setUpToolbar() {
         setSupportActionBar(binding.toolbar)
-        supportActionBar?.title = "Home"
+        supportActionBar?.title = "Select Course"
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
