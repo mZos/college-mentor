@@ -20,8 +20,7 @@ class LanguageFragment : BaseFragment<FragmentLanguageBinding>(
         "  Learn C++",
         "  Learn Javascript",
         "  Learn C",
-        "  Learn SQL",
-        "  Learn R"
+        "  Learn SQL"
     )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

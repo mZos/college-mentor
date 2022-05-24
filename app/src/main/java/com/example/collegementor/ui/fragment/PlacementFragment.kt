@@ -12,11 +12,11 @@ class PlacementFragment : BaseFragment<FragmentPlacementBinding>(
 ) {
 
     val placementTopicList = arrayListOf<String>(
-        "  Data Structure",
-        "  Algorithms",
-        "  Aptitude",
-        "  Interview Questions",
-        "  Project Ideas"
+        "Data Structure",
+        "Algorithms",
+        "Aptitude",
+        "Interview Questions",
+        "Project Ideas"
     )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

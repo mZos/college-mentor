@@ -3,8 +3,6 @@ package com.example.collegementor.ui.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -85,7 +83,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.roadmaps -> {
                     clearBackStack()
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.frame, RoadmapFragment())
+                        .replace(R.id.frame, GuidedPathsFragment())
                         .commit()
                     supportActionBar?.title = "Roadmaps"
                     binding.drawerLayout.closeDrawers()

@@ -18,7 +18,7 @@
         android:icon="@drawable/ic_placement"/>
     <item
         android:id="@+id/roadmaps"
-        android:title="@string/roadmaps"
+        android:title="@string/guided_paths"
         android:icon="@drawable/ic_roadmap"/>
 
     <item
