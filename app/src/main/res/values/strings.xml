@@ -48,7 +48,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="page_in_progress">Page in Progress…</string>
-    <string name="roadmaps">Roadmaps</string>
+    <string name="guided_paths">Guided Paths</string>
     <string name="demo_string">Demo String</string>
     <string name="made_with_love_in_india">Made with love in India</string>
     <string name="developers">Developers:</string>
@@ -74,5 +74,6 @@
     <string name="enter_branch">Enter branch</string>
     <string name="enter_year">Enter year</string>
 
+    <string name="textSize">25_sp</string>
 
 </resources>

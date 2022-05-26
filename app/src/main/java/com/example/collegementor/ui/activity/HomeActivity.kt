@@ -79,7 +79,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.roadmaps -> {
                     clearBackStack()
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.frame, RoadmapFragment())
+                        .replace(R.id.frame, GuidedPathsFragment())
                         .commit()
                     supportActionBar?.title = "Roadmaps"
                     binding.drawerLayout.closeDrawers()

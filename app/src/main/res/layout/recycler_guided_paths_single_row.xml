@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/placementLayout"
+    android:id="@+id/guidedPathLayout"
     android:orientation="vertical"
     android:layout_marginBottom="8dp"
     android:layout_marginHorizontal="5dp"
@@ -25,7 +25,7 @@
             android:weightSum="4">
 
             <TextView
-                android:id="@+id/txtPlacementTopic"
+                android:id="@+id/txtGuidedPathTopic"
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

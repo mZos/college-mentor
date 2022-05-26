@@ -5,16 +5,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.collegementor.databinding.RecyclerRoadmapsSingleRowBinding
+import com.example.collegementor.databinding.RecyclerGuidedPathsSingleRowBinding
 
-class RoadmapRecyclerAdapter(val context: Context, private val itemList: ArrayList<String>) :
-    RecyclerView.Adapter<RoadmapRecyclerAdapter.RoadmapViewHolder>() {
+class GuidedPathsRecyclerAdapter(val context: Context, private val itemList: ArrayList<String>) :
+    RecyclerView.Adapter<GuidedPathsRecyclerAdapter.RoadmapViewHolder>() {
 
-    inner class RoadmapViewHolder(val binding: RecyclerRoadmapsSingleRowBinding) :
+    inner class RoadmapViewHolder(val binding: RecyclerGuidedPathsSingleRowBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RoadmapViewHolder {
-        val binding = RecyclerRoadmapsSingleRowBinding.inflate(
+        val binding = RecyclerGuidedPathsSingleRowBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -24,9 +24,9 @@ class RoadmapRecyclerAdapter(val context: Context, private val itemList: ArrayLi
 
     override fun onBindViewHolder(holder: RoadmapViewHolder, position: Int) {
         val text = itemList[position]
-        holder.binding.txtRoadmaps.text = text
-        holder.binding.roadmapLayout.setOnClickListener {
-            Toast.makeText(context, "Roadmaps Touch", Toast.LENGTH_SHORT).show()
+        holder.binding.txtGuidedPathTopic.text = text
+        holder.binding.guidedPathLayout.setOnClickListener {
+            Toast.makeText(context, "Guided Paths Touch", Toast.LENGTH_SHORT).show()
         }
     }
 
