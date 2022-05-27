@@ -5,7 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegementor.databinding.RecyclerNestedSubjectItemBinding
 
-class SubjectNestedItemAdapter(private val notesList: HashMap<String, String>, val listener: OnSubjectFileClickListener) :
+class SubjectNestedItemAdapter(
+    private val notesList: HashMap<String, String>,
+    val listener: OnSubjectFileClickListener
+) :
     RecyclerView.Adapter<SubjectNestedItemAdapter.SubjectNestedItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubjectNestedItemViewHolder {
         val binding = RecyclerNestedSubjectItemBinding.inflate(
@@ -17,7 +20,7 @@ class SubjectNestedItemAdapter(private val notesList: HashMap<String, String>, v
     }
 
     override fun onBindViewHolder(holder: SubjectNestedItemViewHolder, position: Int) {
-        val fileNameList:ArrayList<String> = arrayListOf()
+        val fileNameList: ArrayList<String> = arrayListOf()
         notesList.keys.forEach {
             fileNameList.add(it)
         }

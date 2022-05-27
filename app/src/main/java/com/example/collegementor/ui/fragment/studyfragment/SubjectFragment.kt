@@ -14,7 +14,7 @@ import com.example.collegementor.firebase.Firebase.btechCs2FirestoreRef
 import com.example.collegementor.firebase.Firebase.btechCs3FirestoreRef
 import com.example.collegementor.firebase.Firebase.btechCs4FirestoreRef
 import com.example.collegementor.ui.fragment.basefragment.BaseFragment
-import com.example.collegementor.modal.BTech
+import com.example.collegementor.modal.BTechModel
 import com.example.collegementor.utils.Constants.YEAR_KEY
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.ktx.toObject
@@ -27,7 +27,7 @@ import kotlinx.coroutines.withContext
 class SubjectFragment : BaseFragment<FragmentSubjectBinding>(FragmentSubjectBinding::inflate),
     SubjectNestedItemAdapter.OnSubjectFileClickListener {
 
-    private var subjectList = arrayListOf<BTech>()
+    private var subjectList = arrayListOf<BTechModel>()
     private lateinit var year: String
     private lateinit var firestoreRef: CollectionReference
 
@@ -62,7 +62,7 @@ class SubjectFragment : BaseFragment<FragmentSubjectBinding>(FragmentSubjectBind
             try {
                 val snapshot = firestoreRef.get().await()
                 snapshot.documents.forEach { data ->
-                    val bTech = data.toObject<BTech>()
+                    val bTech = data.toObject<BTechModel>()
                     bTech?.let { subjectList.add(it) }
                 }
                 withContext(Dispatchers.Main) {

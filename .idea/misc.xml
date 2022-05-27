@@ -54,26 +54,20 @@
         <entry key="..\:/Users/Zakariya/Desktop/New folder (2)/KIPM---study-and-placment-app/app/src/main/res/layout/recycler_skills_single_row.xml" value="0.1530701754385965" />
         <entry key="..\:/Users/Zakariya/Desktop/New folder (2)/KIPM---study-and-placment-app/app/src/main/res/layout/recycler_study_single_row.xml" value="0.21403508771929824" />
         <entry key="..\:/Users/Zakariya/Desktop/New folder (2)/KIPM---study-and-placment-app/app/src/main/res/layout/recycler_subject_single_item.xml" value="0.2" />
-        <entry key="app/src/main/res/drawable-anydpi/ic_right_arrow.xml" value="0.125" />
+        <entry key="app/src/main/res/drawable/about_page_border.xml" value="0.163" />
         <entry key="app/src/main/res/drawable/background_for_add_subject_dilaog.xml" value="0.134" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1109375" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_web_view.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/dialog_add_subjects.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/drawer_layout.xml" value="0.24375" />
+        <entry key="app/src/main/res/layout/fragment_about.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_study.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/fragment_subject.xml" value="0.2216958787304595" />
         <entry key="app/src/main/res/layout/recycler_home_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/recycler_nested_subject_item.xml" value="0.24375" />
-        <entry key="app/src/main/res/layout/fragment_guided_paths.xml" value="0.19375" />
-        <entry key="app/src/main/res/layout/fragment_placement.xml" value="0.18703703703703703" />
-        <entry key="app/src/main/res/layout/recycler_guided_paths_single_row.xml" value="0.19375" />
-        <entry key="app/src/main/res/layout/recycler_language_single_row.xml" value="0.19375" />
-        <entry key="app/src/main/res/layout/recycler_placement_single_row.xml" value="0.22" />
         <entry key="app/src/main/res/layout/recycler_roadmaps_single_row.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/recycler_study_single_row.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/recycler_subject_single_item.xml" value="0.24375" />
-        <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.19375" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.24375" />
       </map>
     </option>

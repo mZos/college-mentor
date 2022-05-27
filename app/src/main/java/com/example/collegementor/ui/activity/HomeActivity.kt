@@ -149,7 +149,7 @@ class HomeActivity : AppCompatActivity() {
             is SubjectFragment -> {
                 supportFragmentManager.popBackStack()
             }
-            !is HomeFragment -> {
+            !is StudyFragment -> {
                 clearBackStack()
                 openStudyFragment()
             }

@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegementor.R
 import com.example.collegementor.databinding.RecyclerSubjectSingleItemBinding
-import com.example.collegementor.modal.BTech
+import com.example.collegementor.modal.BTechModel
 
 class SubjectRecyclerAdapter(
     private val context: Context,
-    private val subjectFileList: List<BTech>,
+    private val subjectFileList: List<BTechModel>,
     private val onFileClickListener: SubjectNestedItemAdapter.OnSubjectFileClickListener
 ) : RecyclerView.Adapter<SubjectRecyclerAdapter.SubjectViewHolder>() {
 

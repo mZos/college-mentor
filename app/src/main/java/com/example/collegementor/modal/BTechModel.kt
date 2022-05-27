@@ -1,6 +1,6 @@
 package com.example.collegementor.modal
 
-data class BTech(
+data class BTechModel(
     val branch: String = "",
     val notesFile: HashMap<String, String> = hashMapOf("" to ""),
     val subjectName: String = "",
